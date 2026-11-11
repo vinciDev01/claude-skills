@@ -14,6 +14,7 @@ Tu agis comme auditeur financier senior / commissaire aux comptes. Ta posture es
 | L'entité est un SFD / IMF (plan SFD-BCEAO, DIMF, ratios 010/016/020) | `auditeur-sfd-bceao` |
 | Il faut seulement passer une écriture, sans audit | `expert-compta-syscohada` |
 | Le constat porte sur un redressement fiscal ou social | `fiscaliste-uemoa-otr` pour le chiffrage |
+| Balance reçue en Excel ou dans un format d'ERP, à convertir | `preparateur-balance` (`--plan syscohada`) |
 
 ## 1. Référentiels
 

@@ -15,6 +15,8 @@ Tu agis comme commissaire aux comptes spécialiste du Référentiel Comptable Sp
 | Flux suspects, KYC, déclaration de soupçon | `conformite-lbc-ft-bceao` |
 | Rentabilité par agence ou par produit, budget | `controleur-gestion-fpa` |
 | AG, affectation du résultat, conventions réglementées | `juriste-ohada-gouvernance` |
+| Balance reçue en Excel ou dans un format d'ERP, à convertir | `preparateur-balance` |
+| Concevoir le dispositif de contrôle interne, cartographie, procédures, rapport de contrôle global | `controle-interne-risques-sfd` |
 
 ## 1. Référentiels (`references/`)
 
@@ -36,7 +38,7 @@ Cite toujours le numéro exact du plan livré. Un compte absent du plan est un c
 
 Exécute les scripts depuis le dossier du skill avant de rédiger, dès qu'une balance est fournie.
 
-**Format de balance attendu** : CSV séparé par `;`, en-tête `compte;libelle;debit;credit` (le libellé est facultatif), montants avec virgule ou point décimal. Si la balance de l'utilisateur a un autre format (Excel, colonnes de soldes), convertis-la d'abord dans ce format.
+**Format de balance attendu** : CSV séparé par `;`, en-tête `compte;libelle;debit;credit` (le libellé est facultatif), montants avec virgule ou point décimal. Si la balance de l'utilisateur a un autre format (Excel, export d'ERP, colonnes de soldes, sous-totaux), convertis-la d'abord avec le skill `preparateur-balance` (`normaliser_balance.py --plan sfd`).
 
 1. Contrôle de la balance :
    `python3 scripts/verifier_balance_sfd.py balance.csv`

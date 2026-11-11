@@ -9,6 +9,7 @@
 # Exemples :
 #   bash push_github.sh git@github.com:mon-compte/skills-ohada.git
 #   bash push_github.sh https://github.com/mon-compte/skills-ohada.git main "Mise à jour des skills"
+#   bash push_github.sh git@github.com:mon-compte/skills-ohada.git "Mise à jour des skills"   (branche main)
 #
 # Relançable : aux exécutions suivantes, il commite les nouveaux changements et pousse.
 
@@ -17,6 +18,12 @@ set -euo pipefail
 URL="${1:-}"
 BRANCHE="${2:-main}"
 MESSAGE="${3:-Mise à jour des skills OHADA / UEMOA}"
+
+# Tolérance : si le 2e argument n'est pas un nom de branche valide, c'est le message de commit.
+if [[ -n "${2:-}" ]] && ! git check-ref-format --branch "$2" >/dev/null 2>&1; then
+  MESSAGE="$2"
+  BRANCHE="${3:-main}"
+fi
 
 if [[ -z "$URL" ]]; then
   echo "Usage : bash push_github.sh <url-du-depot> [branche] [\"message\"]" >&2

@@ -1,12 +1,12 @@
 # Skills Comptabilité, Audit, Finance et Droit (OHADA / UEMOA)
 
-Ce répertoire regroupe **dix skills** qui font de Claude une équipe d'experts comptables, auditeurs, fiscalistes, analystes et juristes pour l'espace **OHADA** et l'**UEMOA (BCEAO)**. Les skills sont rangés par domaine. Chaque dossier de skill est autonome : il contient son `SKILL.md`, ses fichiers `references/` et, le cas échéant, ses `scripts/`.
+Ce répertoire regroupe **douze skills** qui font de Claude une équipe d'experts comptables, auditeurs, fiscalistes, analystes et juristes pour l'espace **OHADA** et l'**UEMOA (BCEAO)**. Les skills sont rangés par domaine. Chaque dossier de skill est autonome : il contient son `SKILL.md`, ses fichiers `references/` et, le cas échéant, ses `scripts/`.
 
 ## Organisation
 
 ```
-comptabilite/            expert-compta-syscohada, mentor-compta-anglosaxon (+ .zip)
-audit/                   auditeur-compta-syscohada, auditeur-sfd-bceao
+comptabilite/            expert-compta-syscohada, mentor-compta-anglosaxon (+ .zip), preparateur-balance
+audit/                   auditeur-compta-syscohada, auditeur-sfd-bceao, controle-interne-risques-sfd
 fiscalite/               fiscaliste-uemoa-otr
 finance-risque/          controleur-gestion-fpa, analyste-credit-risque
 juridique-conformite/    juriste-ohada-gouvernance, conformite-lbc-ft-bceao
@@ -31,6 +31,8 @@ Pour installer ou zipper un skill, prendre son dossier (ex. `audit/auditeur-sfd-
 | 8 | `conformite-lbc-ft-bceao` | juridique-conformite | KYC, PPE, opérations atypiques, déclaration de soupçon | Loi uniforme LBC/FT, BCEAO, CENTIF | |
 | 9 | `juriste-ohada-gouvernance` | juridique-conformite | AG/CA, PV, affectation du résultat, conventions, contrats | Actes uniformes OHADA, loi SFD | |
 | 10 | `humanizer-fr-pro` | redaction | Relecture et réécriture des livrables pour supprimer le ton « IA » | Règles de style et de typographie | |
+| 11 | `preparateur-balance` | comptabilite | Conversion des balances Excel / ERP / core banking au format des skills, contrôle d'équilibre | Plans SFD-BCEAO et SYSCOHADA | normalisation de balance |
+| 12 | `controle-interne-risques-sfd` | audit | Cartographie des risques opérationnels, procédures, plan de contrôle, rapport de contrôle global | Instructions BCEAO 017-12-2010 et 018-12-2010 | cartographie des risques |
 
 ## Quel skill pour quelle demande ?
 
@@ -40,6 +42,8 @@ Les skills se renvoient les uns aux autres. Les frontières principales :
 - **Auditer** une entreprise commerciale : `auditeur-compta-syscohada`. Auditer un **SFD / IMF** : `auditeur-sfd-bceao`.
 - **Un dossier de crédit** précis : `analyste-credit-risque`. **Le portefeuille** ou les ratios dans leur ensemble : `auditeur-sfd-bceao`.
 - **Un flux suspect** : `conformite-lbc-ft-bceao` d'abord, le recouvrement ensuite.
+- **Une balance en Excel ou export d'ERP** : `preparateur-balance` d'abord, puis le skill d'analyse.
+- **Constater** des anomalies dans un SFD : `auditeur-sfd-bceao`. **Organiser** le dispositif qui les prévient : `controle-interne-risques-sfd`.
 
 ---
 
@@ -69,7 +73,7 @@ python3 scripts/calculer_ratios_bceao.py balance.csv valeurs.json [--n1 balance_
 La balance est un CSV `compte;libelle;debit;credit`. `valeurs.json` contient le statut du SFD et les grandeurs extra-comptables (codes listés dans `references/grandeurs.json`) ; sans lui, les ratios qui en dépendent ne sont pas calculables.
 
 ## 5. `fiscalite/fiscaliste-uemoa-otr`
-Passage au résultat fiscal, IS contre IMF, TVA et prorata, TAF, retenues à la source, IRCM, paie, CNSS et AMU, échéances et sanctions. Les taux et seuils sont rassemblés dans un tableau de **paramètres à confirmer** : le skill signale chaque paramètre utilisé qui dépend de la loi de finances de l'année.
+Passage au résultat fiscal, IS contre IMF, TVA et prorata, TAF, retenues à la source, IRCM, paie, CNSS et AMU, échéances et sanctions. Les taux fiscaux non vérifiés sont rassemblés dans un tableau de **paramètres à confirmer** ; les paramètres de paie, eux, ont été vérifiés sur les sources officielles.
 
 * « Voici notre résultat comptable et nos charges sensibles : calcule les réintégrations, le résultat fiscal et compare l'IS à l'IMF. »
 
@@ -105,6 +109,23 @@ Vie sociale (AGO dans les 6 mois, réserve légale, capitaux propres inférieurs
 
 ## 10. `redaction/humanizer-fr-pro`
 Supprime les tics d'écriture IA d'un texte français sans en changer le fond. Les autres skills l'appellent pour finaliser leurs livrables quand il est installé.
+
+---
+
+## 11. `comptabilite/preparateur-balance`
+Détecte l'en-tête et les colonnes d'un export (xlsx ou csv, encodage Windows inclus), lit les montants au format français, retire titres, totaux et comptes parents, rattache les comptes au plan (`57111000` vers `57111`), contrôle l'équilibre et produit le CSV attendu par les autres skills, avec un rapport de ce qui a été modifié.
+
+```bash
+python3 scripts/normaliser_balance.py export.xlsx --apercu --plan sfd
+python3 scripts/normaliser_balance.py export.xlsx -o balance.csv --plan sfd
+```
+
+## 12. `audit/controle-interne-risques-sfd`
+Conçoit le dispositif de contrôle interne exigé par l'Instruction BCEAO 017-12-2010 : cartographie des risques à partir d'une bibliothèque de 36 risques types reliés aux codes opération du core banking, manuel de procédures avec séparation des tâches, plan de contrôle permanent, rapport de contrôle global (11 rubriques imposées, 6 mois après la fin de l'année), suivi des recommandations et calendrier réglementaire.
+
+```bash
+python3 scripts/cartographie_risques.py references/bibliotheque-risques-sfd.csv --top 10
+```
 
 ---
 
