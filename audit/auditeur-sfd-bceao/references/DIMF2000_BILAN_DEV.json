@@ -1,0 +1,1791 @@
+{
+  "code": "DIMF2000_BILAN_DEV",
+  "libelle": "DIMF 2000 : bilan, version développée",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Bilan DIMF 2000 (version développée)",
+    "type": "TABLEAU",
+    "referentiel": "SFD_BCEAO",
+    "variante": "DEVELOPPEE",
+    "colonnes": [
+      {
+        "code": "BRUT",
+        "libelle": "Brut",
+        "type": "FORMULE"
+      },
+      {
+        "code": "AMORT",
+        "libelle": "Amortissements et provisions",
+        "type": "FORMULE"
+      },
+      {
+        "code": "NET",
+        "libelle": "Net N",
+        "type": "FORMULE"
+      },
+      {
+        "code": "NET_N1",
+        "libelle": "Net N-1",
+        "type": "PRECEDENTE",
+        "colonneA": "NET",
+        "decalage": 1,
+        "unite": "ANNEE"
+      }
+    ],
+    "colonnePrincipale": "NET",
+    "postes": [
+      {
+        "code": "A01",
+        "codeExport": "A01",
+        "libelle": "OPÉRATIONS DE TRÉSORERIE ET AVEC LES INSTITUTIONS FINANCIÈRES",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "PLAGE(A10, A70)",
+          "AMORT": "PLAGE(A10, A70)",
+          "NET": "PLAGE(A10, A70)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier) ; la concordance de l'annexe 1.1 cite aussi ex 1511 à ex 1571, que ne reprend aucun poste du modèle"
+      },
+      {
+        "code": "A10",
+        "codeExport": "A10",
+        "libelle": "Valeur en caisse",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(10)",
+          "NET": "SOLDE(10)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A11",
+        "codeExport": "A11",
+        "libelle": "Billets et monnaies",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(101)",
+          "NET": "SOLDE(101)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A12",
+        "codeExport": "A12",
+        "libelle": "Comptes ordinaires débiteurs",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(1131) + DEB(1141) + DEB(1161) + DEB(1171) + DEB(1541) + DEB(1561) + DEB(1571)",
+          "NET": "SOLDE(1131) + DEB(1141) + DEB(1161) + DEB(1171) + DEB(1541) + DEB(1561) + DEB(1571)"
+        },
+        "aValider": true,
+        "note": "compte 1101 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1111 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1121 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1151 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; comptes DEB(1541), DEB(1561), DEB(1571) rattachés par défaut (feuille du plan livré non reprise par la concordance)"
+      },
+      {
+        "code": "A2A",
+        "codeExport": "A2A",
+        "libelle": "Autres comptes de dépôts débiteurs",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(1261) + SOLDE(1271) + SOLDE(1281)",
+          "NET": "SOLDE(1261) + SOLDE(1271) + SOLDE(1281)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A2H",
+        "codeExport": "A2H",
+        "libelle": "Dépôts à terme constitués",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(1261)",
+          "NET": "SOLDE(1261)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A2I",
+        "codeExport": "A2I",
+        "libelle": "Dépôts de garantie constitués",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(1271)",
+          "NET": "SOLDE(1271)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A2J",
+        "codeExport": "A2J",
+        "libelle": "Autres dépôts constitués",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(1281)",
+          "NET": "SOLDE(1281)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A3A",
+        "codeExport": "A3A",
+        "libelle": "Comptes de prêts",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(1311) + SOLDE(1331)",
+          "NET": "SOLDE(1311) + SOLDE(1331)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A3B",
+        "codeExport": "A3B",
+        "libelle": "Prêts à moins d'un an",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(1311)",
+          "NET": "SOLDE(1311)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A3C",
+        "codeExport": "A3C",
+        "libelle": "Prêts à terme",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(1331)",
+          "NET": "SOLDE(1331)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "A60",
+        "codeExport": "A60",
+        "libelle": "Créances rattachées",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(1137) + SOLDE(1147) + SOLDE(1167) + SOLDE(1177) + SOLDE(1267) + SOLDE(1277) + SOLDE(1287) + SOLDE(1317) + SOLDE(1337) + SOLDE(1547) + SOLDE(1567) + SOLDE(1577)",
+          "NET": "SOLDE(1137) + SOLDE(1147) + SOLDE(1167) + SOLDE(1177) + SOLDE(1267) + SOLDE(1277) + SOLDE(1287) + SOLDE(1317) + SOLDE(1337) + SOLDE(1547) + SOLDE(1567) + SOLDE(1577)"
+        },
+        "aValider": true,
+        "note": "compte 111117 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 111127 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1157 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1517 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1527 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1537 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1557 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "A70",
+        "codeExport": "A70",
+        "libelle": "Prêts en souffrance (et immobilisés)",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(191) + SOLDE(192) + SOLDE(193) + SOLDE(194)",
+          "AMORT": "CRED(1991) + CRED(1992) + CRED(1993)",
+          "NET": "SOLDE(191) + SOLDE(192) + SOLDE(193) + SOLDE(194) + SOLDE(1991) + SOLDE(1992) + SOLDE(1993)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "A71",
+        "codeExport": "A71",
+        "libelle": "Prêts en souffrance de 6 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(192)",
+          "AMORT": "CRED(1991)",
+          "NET": "SOLDE(192) + SOLDE(1991)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "A72",
+        "codeExport": "A72",
+        "libelle": "Prêts en souffrance de plus de 6 à 12 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(193)",
+          "AMORT": "CRED(1992)",
+          "NET": "SOLDE(193) + SOLDE(1992)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "A73",
+        "codeExport": "A73",
+        "libelle": "Prêts en souffrance de plus de 12 à 24 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(194)",
+          "AMORT": "CRED(1993)",
+          "NET": "SOLDE(194) + SOLDE(1993)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "B01",
+        "codeExport": "B01",
+        "libelle": "OPÉRATIONS AVEC LES MEMBRES, BÉNÉFICIAIRES OU CLIENTS",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "PLAGE(B2D, B70)",
+          "AMORT": "PLAGE(B2D, B70)",
+          "NET": "PLAGE(B2D, B70)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "B2D",
+        "codeExport": "B2D",
+        "libelle": "Crédits à court terme",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(2022) - SOLDE(20227) + SOLDE(2023)",
+          "NET": "SOLDE(2022) - SOLDE(20227) + SOLDE(2023)"
+        },
+        "aValider": true,
+        "note": "point 10 de la note : la concordance donne 20221 + 20231, l'annexe 1.2 cite 20222 « crédits à court terme » ; compte 20221 remplacé par 2022 (plan livré) ; compte 20227 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par B65) ; compte 20231 remplacé par 2023 (plan livré)"
+      },
+      {
+        "code": "B2N",
+        "codeExport": "B2N",
+        "libelle": "Comptes ordinaires (débiteurs)",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "DEB(2511) - DEB(25116)",
+          "NET": "DEB(2511) - DEB(25116)"
+        },
+        "aValider": true,
+        "note": "compte 25116 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par G90) ; le plan livré n'a pas de sous-compte mouvementable propre sous 2511 (sous-comptes : 25116, 25117) : à compléter avant la recette des états"
+      },
+      {
+        "code": "B30",
+        "codeExport": "B30",
+        "libelle": "Crédits à moyen terme",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(2031)",
+          "NET": "SOLDE(2031)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "B40",
+        "codeExport": "B40",
+        "libelle": "Crédits à long terme",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 2041 remplacé par 20 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "B65",
+        "codeExport": "B65",
+        "libelle": "Créances rattachées",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(20227) + SOLDE(2037)",
+          "NET": "SOLDE(20227) + SOLDE(2037)"
+        },
+        "aValider": true,
+        "note": "compte 2047 remplacé par 20 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 20237 remplacé par 2023 (plan livré) puis retiré : déjà repris par B2D"
+      },
+      {
+        "code": "B70",
+        "codeExport": "B70",
+        "libelle": "Crédits en souffrance (et immobilisés)",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(291) + SOLDE(292) + SOLDE(293) + SOLDE(294)",
+          "AMORT": "CRED(2991) + CRED(2992) + CRED(2993)",
+          "NET": "SOLDE(291) + SOLDE(292) + SOLDE(293) + SOLDE(294) + SOLDE(2991) + SOLDE(2992) + SOLDE(2993)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "B71",
+        "codeExport": "B71",
+        "libelle": "Crédits en souffrance de 6 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(292)",
+          "AMORT": "CRED(2991)",
+          "NET": "SOLDE(292) + SOLDE(2991)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "B72",
+        "codeExport": "B72",
+        "libelle": "Crédits en souffrance de plus de 6 à 12 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(293)",
+          "AMORT": "CRED(2992)",
+          "NET": "SOLDE(293) + SOLDE(2992)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "B73",
+        "codeExport": "B73",
+        "libelle": "Crédits en souffrance de plus de 12 à 24 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(294)",
+          "AMORT": "CRED(2993)",
+          "NET": "SOLDE(294) + SOLDE(2993)"
+        },
+        "aValider": true,
+        "note": "point 9 de la note : affectation des comptes 191 à 194 et 291 à 294 aux tranches d'ancienneté à trancher"
+      },
+      {
+        "code": "C01",
+        "codeExport": "C01",
+        "libelle": "OPÉRATIONS SUR TITRES ET OPÉRATIONS DIVERSES",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "PLAGE(C10, C6A)",
+          "AMORT": "PLAGE(C10, C6A)",
+          "NET": "PLAGE(C10, C6A)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "C10",
+        "codeExport": "C10",
+        "libelle": "Titres de placement",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "AMORT": "CRED(309)",
+          "NET": "SOLDE(309)"
+        },
+        "aValider": true,
+        "note": "compte 301 remplacé par 30 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 302 remplacé par 30 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 303 remplacé par 30 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 304 remplacé par 30 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "C30",
+        "codeExport": "C30",
+        "libelle": "Comptes de stocks",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(3211) + SOLDE(3221) + SOLDE(3231)",
+          "AMORT": "CRED(3219) + CRED(3229) + CRED(3239)",
+          "NET": "SOLDE(3211) + SOLDE(3221) + SOLDE(3231) + SOLDE(3219) + SOLDE(3229) + SOLDE(3239)"
+        },
+        "aValider": true,
+        "note": "compte 3241 remplacé par 32 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 3249 remplacé par 32 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "C31",
+        "codeExport": "C31",
+        "libelle": "Stocks de meubles",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(3211)",
+          "AMORT": "CRED(3219)",
+          "NET": "SOLDE(3211) + SOLDE(3219)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C32",
+        "codeExport": "C32",
+        "libelle": "Stocks de marchandises",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(3221)",
+          "AMORT": "CRED(3229)",
+          "NET": "SOLDE(3221) + SOLDE(3229)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C33",
+        "codeExport": "C33",
+        "libelle": "Stocks de fournitures",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(3231)",
+          "AMORT": "CRED(3239)",
+          "NET": "SOLDE(3231) + SOLDE(3239)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C34",
+        "codeExport": "C34",
+        "libelle": "Autres stocks",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 3241 remplacé par 32 (plan livré) puis retiré : compte trop général ; compte 3249 remplacé par 32 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "C40",
+        "codeExport": "C40",
+        "libelle": "Débiteurs divers",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(331) + CRED(3319)",
+          "AMORT": "CRED(3319)",
+          "NET": "SOLDE(331)"
+        },
+        "aValider": true,
+        "note": "compte 33191 remplacé par 3319 (plan livré) ; compte 33199 remplacé par 3319 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 33111 remplacé par 331 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 33112 remplacé par 331 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 33113 remplacé par 331 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 33114 remplacé par 331 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 33115 remplacé par 331 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 33116 remplacé par 331 (plan livré), compris dans un compte déjà cité dans ce poste ; le plan livré n'a pas de sous-compte mouvementable propre sous 331 (sous-comptes : 3319) : à compléter avant la recette des états ; provisions 3319 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "C55",
+        "codeExport": "C55",
+        "libelle": "Créances rattachées",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(307)",
+          "NET": "SOLDE(307)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C56",
+        "codeExport": "C56",
+        "libelle": "Valeurs à l'encaissement avec crédit immédiat",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 37111 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 37112 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "C59",
+        "codeExport": "C59",
+        "libelle": "Valeurs à rejeter",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 18 de la note : dans l'extraction brute, le code C59 figure après ses comptes ; compte 3713 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "C6A",
+        "codeExport": "C6A",
+        "libelle": "Comptes d'ordre et divers",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(3791) + SOLDE(378) + SOLDE(3811) + SOLDE(3812) + SOLDE(3814) + SOLDE(3815)",
+          "NET": "SOLDE(3791) + SOLDE(378) + SOLDE(3811) + SOLDE(3812) + SOLDE(3814) + SOLDE(3815)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : dans l'extraction brute, le code C6A figure au milieu de ses comptes ; compte 3741 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 3742 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 39 remplacé par 3 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "C6B",
+        "codeExport": "C6B",
+        "libelle": "Comptes de liaison",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 39 remplacé par 3 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "C6C",
+        "codeExport": "C6C",
+        "libelle": "Comptes de différence de conversion",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 3741 remplacé par 37 (plan livré) puis retiré : compte trop général ; compte 37421 remplacé par 37 (plan livré) puis retiré : compte trop général ; compte 37429 remplacé par 37 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "C6G",
+        "codeExport": "C6G",
+        "libelle": "Comptes de régularisation actif",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(3811) + SOLDE(3812) + SOLDE(3814) + SOLDE(3815)",
+          "NET": "SOLDE(3811) + SOLDE(3812) + SOLDE(3814) + SOLDE(3815)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C6Q",
+        "codeExport": "C6Q",
+        "libelle": "Comptes transitoires",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(378)",
+          "NET": "SOLDE(378)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "C6R",
+        "codeExport": "C6R",
+        "libelle": "Comptes d'attente actif",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(3791)",
+          "NET": "SOLDE(3791)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "D01",
+        "codeExport": "D01",
+        "libelle": "VALEURS IMMOBILISÉES",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "PLAGE(D1A, D70)",
+          "AMORT": "PLAGE(D1A, D70)",
+          "NET": "PLAGE(D1A, D70)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier) ; la concordance de l'annexe 1.1 (41 + 43 + 44 + 45 + 46 + 47 + 49) n'inclut pas 42 (D1S)"
+      },
+      {
+        "code": "D1A",
+        "codeExport": "D1A",
+        "libelle": "Immobilisations financières",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(412) - SOLDE(4126) - SOLDE(4127) + CRED(4129)",
+          "AMORT": "CRED(4129)",
+          "NET": "SOLDE(412) - SOLDE(4126) - SOLDE(4127)"
+        },
+        "aValider": true,
+        "note": "compte 4101 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4102 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4141 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4142 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4149 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4121 remplacé par 412 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 4126 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par K01) ; compte 4127 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par D60) ; compte 4122 remplacé par 412 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 4123 remplacé par 412 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 4124 remplacé par 412 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 4125 remplacé par 412 (plan livré), compris dans un compte déjà cité dans ce poste ; le plan livré n'a pas de sous-compte mouvementable propre sous 412 (sous-comptes : 4126, 4127, 4129) : à compléter avant la recette des états ; provisions 4129 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D10",
+        "codeExport": "D10",
+        "libelle": "Prêts et titres subordonnés",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4101 remplacé par 41 (plan livré) puis retiré : compte trop général ; compte 4102 remplacé par 41 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D1E",
+        "codeExport": "D1E",
+        "libelle": "Titres de participation",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(412) - SOLDE(4126) - SOLDE(4127) + CRED(4129)",
+          "AMORT": "CRED(4129)",
+          "NET": "SOLDE(412) - SOLDE(4126) - SOLDE(4127)"
+        },
+        "aValider": true,
+        "note": "compte 4121 remplacé par 412 (plan livré) ; compte 4122 remplacé par 412 (plan livré), déjà cité dans ce poste ; compte 4123 remplacé par 412 (plan livré), déjà cité dans ce poste ; compte 4124 remplacé par 412 (plan livré), déjà cité dans ce poste ; compte 4125 remplacé par 412 (plan livré), déjà cité dans ce poste ; compte 4126 déduit comme dans D1A (repris par un autre poste) ; compte 4127 déduit comme dans D1A (repris par un autre poste) ; le plan livré n'a pas de sous-compte mouvementable propre sous 412 (sous-comptes : 4126, 4127, 4129) : à compléter avant la recette des états ; provisions 4129 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D1L",
+        "codeExport": "D1L",
+        "libelle": "Titres d'investissement",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4141 remplacé par 41 (plan livré) puis retiré : compte trop général ; compte 4142 remplacé par 41 (plan livré) puis retiré : compte trop général ; compte 4149 remplacé par 41 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D1S",
+        "codeExport": "D1S",
+        "libelle": "Dépôts et cautionnements",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(42) - SOLDE(427) + CRED(429)",
+          "AMORT": "CRED(429)",
+          "NET": "SOLDE(42) - SOLDE(427)"
+        },
+        "aValider": true,
+        "note": "compte 427 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par D60) ; provisions 429 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D23",
+        "codeExport": "D23",
+        "libelle": "Immobilisations en cours",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(4311) + SOLDE(4321)",
+          "AMORT": "CRED(4319) + CRED(4329)",
+          "NET": "SOLDE(4311) + SOLDE(4319) + SOLDE(4321) + SOLDE(4329)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "D24",
+        "codeExport": "D24",
+        "libelle": "Immobilisations incorporelles en cours",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(4311)",
+          "AMORT": "CRED(4319)",
+          "NET": "SOLDE(4311) + SOLDE(4319)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "D25",
+        "codeExport": "D25",
+        "libelle": "Immobilisations corporelles en cours",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(4321)",
+          "AMORT": "CRED(4329)",
+          "NET": "SOLDE(4321) + SOLDE(4329)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "D30",
+        "codeExport": "D30",
+        "libelle": "Immobilisations d'exploitation",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(441) + SOLDE(442) + CRED(4418) + CRED(4419) + CRED(4428) + CRED(4429)",
+          "AMORT": "CRED(4418) + CRED(4419) + CRED(4428) + CRED(4429)",
+          "NET": "SOLDE(441) + SOLDE(442)"
+        },
+        "aValider": true,
+        "note": "compte 4411 remplacé par 441 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 4412 remplacé par 441 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 4413 remplacé par 441 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 4421 remplacé par 442 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; le plan livré n'a pas de sous-compte mouvementable propre sous 441 (sous-comptes : 4418, 4419) : à compléter avant la recette des états ; le plan livré n'a pas de sous-compte mouvementable propre sous 442 (sous-comptes : 4428, 4429) : à compléter avant la recette des états ; provisions 4418, 4419, 4428, 4429 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D31",
+        "codeExport": "D31",
+        "libelle": "Immobilisations incorporelles d'exploitation",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(441) + CRED(4418) + CRED(4419)",
+          "AMORT": "CRED(4418) + CRED(4419)",
+          "NET": "SOLDE(441)"
+        },
+        "aValider": true,
+        "note": "compte 4411 remplacé par 441 (plan livré) ; compte 4412 remplacé par 441 (plan livré), déjà cité dans ce poste ; compte 4413 remplacé par 441 (plan livré), déjà cité dans ce poste ; le plan livré n'a pas de sous-compte mouvementable propre sous 441 (sous-comptes : 4418, 4419) : à compléter avant la recette des états ; provisions 4418, 4419 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D36",
+        "codeExport": "D36",
+        "libelle": "Immobilisations corporelles d'exploitation",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {
+          "BRUT": "SOLDE(442) + CRED(4428) + CRED(4429)",
+          "AMORT": "CRED(4428) + CRED(4429)",
+          "NET": "SOLDE(442)"
+        },
+        "aValider": true,
+        "note": "compte 4421 remplacé par 442 (plan livré) ; le plan livré n'a pas de sous-compte mouvementable propre sous 442 (sous-comptes : 4428, 4429) : à compléter avant la recette des états ; provisions 4428, 4429 comprises dans le solde d'un compte plus général du poste : rajoutées au brut, portées en amortissements et provisions"
+      },
+      {
+        "code": "D40",
+        "codeExport": "D40",
+        "libelle": "Immobilisations hors exploitation",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4511 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4513 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4518 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4519 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4521 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4528 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4529 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4531 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4538 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4539 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4541 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4548 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4549 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D41",
+        "codeExport": "D41",
+        "libelle": "Immobilisations incorporelles hors exploitation",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4511 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4513 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4518 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4519 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D45",
+        "codeExport": "D45",
+        "libelle": "Immobilisations corporelles hors exploitation",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4521 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4528 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4529 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D46",
+        "codeExport": "D46",
+        "libelle": "Immobilisations incorporelles acquises par réalisation de garantie",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4531 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4538 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4539 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D47",
+        "codeExport": "D47",
+        "libelle": "Immobilisations corporelles acquises par réalisation de garantie",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 4541 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4548 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 4549 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D50",
+        "codeExport": "D50",
+        "libelle": "Crédit-bail et opérations assimilées",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 461 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 462 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 463 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 464 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 468 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 469 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 471 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 472 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 473 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 474 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 478 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 479 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D51",
+        "codeExport": "D51",
+        "libelle": "Crédit-bail",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 461 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 463 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 464 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 468 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 469 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D52",
+        "codeExport": "D52",
+        "libelle": "L.O.A.",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 18 de la note : D51 et D52 citent tous deux 463, 464, 468 et 469 dans l'extraction brute ; compte 462 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 463 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 464 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 468 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 469 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D53",
+        "codeExport": "D53",
+        "libelle": "Location-vente",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 471 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 472 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 473 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 474 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 478 remplacé par 4 (plan livré) puis retiré : compte trop général ; compte 479 remplacé par 4 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D60",
+        "codeExport": "D60",
+        "libelle": "Créances rattachées",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(4127) + SOLDE(427)",
+          "NET": "SOLDE(4127) + SOLDE(427)"
+        },
+        "aValider": true,
+        "note": "compte 4107 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 4147 remplacé par 41 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 467 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 477 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "D70",
+        "codeExport": "D70",
+        "libelle": "Créances en souffrance (crédit-bail)",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "PLAGE(D71, D73)",
+          "AMORT": "PLAGE(D71, D73)",
+          "NET": "PLAGE(D71, D73)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier) ; la concordance brute « 491 + 492 - 493 » ne concorde pas avec D71 à D73 : total retenu = D71 + D72 + D73"
+      },
+      {
+        "code": "D71",
+        "codeExport": "D71",
+        "libelle": "Créances en souffrance de 6 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 491 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49961 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49971 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D72",
+        "codeExport": "D72",
+        "libelle": "Créances en souffrance de plus de 6 à 12 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 492 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49962 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49972 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "D73",
+        "codeExport": "D73",
+        "libelle": "Créances en souffrance de plus de 12 à 24 mois au plus",
+        "cote": "ACTIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 493 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49963 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 49973 remplacé par 4 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "E01",
+        "codeExport": "E01",
+        "libelle": "ACTIONNAIRES, ASSOCIÉS OU MEMBRES",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "SOLDE(5731) + SOLDE(5732)",
+          "NET": "SOLDE(5731) + SOLDE(5732)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "E02",
+        "codeExport": "E02",
+        "libelle": "Capital non appelé",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(5731)",
+          "NET": "SOLDE(5731)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "E03",
+        "codeExport": "E03",
+        "libelle": "Capital appelé non versé",
+        "cote": "ACTIF",
+        "niveau": 1,
+        "formules": {
+          "BRUT": "SOLDE(5732)",
+          "NET": "SOLDE(5732)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "E05",
+        "codeExport": "E05",
+        "libelle": "EXCÉDENT DES CHARGES SUR LES PRODUITS (états infra-annuels)",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 3 et point 18 de la note : en cours d'exercice, le résultat des classes 6 et 7 est porté au passif par L80 (signé) ; ce poste reste vide pour ne pas compter deux fois le résultat"
+      },
+      {
+        "code": "E90",
+        "codeExport": "E90",
+        "libelle": "TOTAL ACTIF",
+        "cote": "ACTIF",
+        "niveau": 0,
+        "formules": {
+          "BRUT": "PLAGE(A01, E05)",
+          "AMORT": "PLAGE(A01, E05)",
+          "NET": "PLAGE(A01, E05)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "F01",
+        "codeExport": "F01",
+        "libelle": "OPÉRATIONS DE TRÉSORERIE ET AVEC LES INSTITUTIONS FINANCIÈRES",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "PLAGE(F1A, F60)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F1A",
+        "codeExport": "F1A",
+        "libelle": "Comptes ordinaires créditeurs",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "CRED(1141) + CRED(1161) + CRED(1171) + CRED(1541) + CRED(1561) + CRED(1571)"
+        },
+        "aValider": true,
+        "note": "compte 111111 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 111121 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1151 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1511 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1521 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1531 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1551 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "F2A",
+        "codeExport": "F2A",
+        "libelle": "Autres comptes de dépôts créditeurs",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(1611) + SOLDE(1621) + SOLDE(1651)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F2B",
+        "codeExport": "F2B",
+        "libelle": "Dépôts à terme reçus",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(1611)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F2C",
+        "codeExport": "F2C",
+        "libelle": "Dépôts de garantie reçus",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(1621)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F2D",
+        "codeExport": "F2D",
+        "libelle": "Autres dépôts reçus",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(1651)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F3A",
+        "codeExport": "F3A",
+        "libelle": "Comptes d'emprunts",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(1751) + SOLDE(1781)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F3E",
+        "codeExport": "F3E",
+        "libelle": "Emprunts à moins d'un an",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(1751)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F3F",
+        "codeExport": "F3F",
+        "libelle": "Emprunts à terme",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(1781)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F50",
+        "codeExport": "F50",
+        "libelle": "Autres sommes dues aux institutions financières",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(179)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F55",
+        "codeExport": "F55",
+        "libelle": "Ressources affectées",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(18)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "F60",
+        "codeExport": "F60",
+        "libelle": "Dettes rattachées",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(1136) + SOLDE(1146) + SOLDE(1166) + SOLDE(1176) + SOLDE(1546) + SOLDE(1566) + SOLDE(1576) + SOLDE(1756) + SOLDE(1786) + SOLDE(1616) + SOLDE(1626) + SOLDE(1656)"
+        },
+        "aValider": true,
+        "note": "compte 111116 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 111126 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1156 remplacé par 11 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1516 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1526 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1536 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 1556 remplacé par 15 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "G01",
+        "codeExport": "G01",
+        "libelle": "OPÉRATIONS AVEC LES MEMBRES, BÉNÉFICIAIRES OU CLIENTS",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "PLAGE(G10, G90)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "G10",
+        "codeExport": "G10",
+        "libelle": "Comptes ordinaires créditeurs",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "CRED(2511) - CRED(25116) + CRED(2512) - CRED(25126)"
+        },
+        "aValider": true,
+        "note": "compte 25111 remplacé par 2511 (plan livré) ; compte 25116 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par G90) ; compte 25121 remplacé par 2512 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 25126 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par G90) ; le plan livré n'a pas de sous-compte mouvementable propre sous 2511 (sous-comptes : 25116, 25117) : à compléter avant la recette des états ; le plan livré n'a pas de sous-compte mouvementable propre sous 2512 (sous-comptes : 25126) : à compléter avant la recette des états"
+      },
+      {
+        "code": "G15",
+        "codeExport": "G15",
+        "libelle": "Dépôts à terme reçus",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(2521)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "G2A",
+        "codeExport": "G2A",
+        "libelle": "Comptes d'épargne à régime spécial",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "- SOLDE(25316) + SOLDE(253)"
+        },
+        "aValider": true,
+        "note": "compte 25311 remplacé par 2531 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 25316 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par G90) ; compte 25321 remplacé par 253 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 2531 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par G90) ; compte 25331 remplacé par 253 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 25391 remplacé par 253 (plan livré), compris dans un compte déjà cité dans ce poste ; le plan livré n'a pas de sous-compte mouvementable propre sous 253 (sous-comptes : 25316) : à compléter avant la recette des états"
+      },
+      {
+        "code": "G30",
+        "codeExport": "G30",
+        "libelle": "Autres dépôts de garantie reçus",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(2545)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "G35",
+        "codeExport": "G35",
+        "libelle": "Autres dépôts reçus",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(2551)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "G60",
+        "codeExport": "G60",
+        "libelle": "Emprunts",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(2711)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "G70",
+        "codeExport": "G70",
+        "libelle": "Autres sommes dues",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(2721) + SOLDE(2722) + SOLDE(2725)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "G90",
+        "codeExport": "G90",
+        "libelle": "Dettes rattachées",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(25116) + SOLDE(25126) + SOLDE(2526) + SOLDE(2546) + SOLDE(2556) + SOLDE(25316) + SOLDE(2716) + SOLDE(2726)"
+        },
+        "aValider": true,
+        "note": "compte 25326 remplacé par 253 (plan livré) puis retiré : déjà repris par G2A ; compte 25336 remplacé par 253 (plan livré) puis retiré : déjà repris par G2A ; compte 25396 remplacé par 253 (plan livré) puis retiré : déjà repris par G2A"
+      },
+      {
+        "code": "H01",
+        "codeExport": "H01",
+        "libelle": "OPÉRATIONS SUR TITRES ET OPÉRATIONS DIVERSES",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "PLAGE(H10, H6A)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "H10",
+        "codeExport": "H10",
+        "libelle": "Versements restant à effectuer",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(305)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "H40",
+        "codeExport": "H40",
+        "libelle": "Créditeurs divers",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(332)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "H6A",
+        "codeExport": "H6A",
+        "libelle": "Comptes d'ordre et divers",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(3792) + SOLDE(3822) + SOLDE(3824) + SOLDE(3825)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : dans l'extraction brute, le code H6A figure au milieu de ses comptes ; compte 3741 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 3743 remplacé par 37 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 39 remplacé par 3 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "H6B",
+        "codeExport": "H6B",
+        "libelle": "Comptes de liaison",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 39 remplacé par 3 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "H6C",
+        "codeExport": "H6C",
+        "libelle": "Comptes de différences de conversion",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 3741 remplacé par 37 (plan livré) puis retiré : compte trop général ; compte 37431 remplacé par 37 (plan livré) puis retiré : compte trop général ; compte 37439 remplacé par 37 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "H6G",
+        "codeExport": "H6G",
+        "libelle": "Comptes de régularisation passif",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(3822) + SOLDE(3824) + SOLDE(3825)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "H6P",
+        "codeExport": "H6P",
+        "libelle": "Comptes d'attente passif",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(3792)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "K01",
+        "codeExport": "K01",
+        "libelle": "VERSEMENTS RESTANT À EFFECTUER SUR IMMOBILISATIONS FINANCIÈRES",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "SOLDE(4126)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "K20",
+        "codeExport": "K20",
+        "libelle": "Titres de participation",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(4126)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L01",
+        "codeExport": "L01",
+        "libelle": "PROVISIONS, FONDS PROPRES ET ASSIMILÉS",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "PLAGE(L10, L80)"
+        },
+        "aValider": true,
+        "note": "point 6 de la note : la concordance de l'annexe 1.1 (501 + 502 + 51 à 59) n'inclut ni 503 (L27) ni 5731 / 5732 ; le total retenu est la somme des postes L10 à L80, L27 compris ; point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      },
+      {
+        "code": "L10",
+        "codeExport": "L10",
+        "libelle": "Subventions d'investissement",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(5011) + SOLDE(5012)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L20",
+        "codeExport": "L20",
+        "libelle": "Fonds affectés",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(502)"
+        },
+        "aValider": true,
+        "note": "compte 5021 remplacé par 502 (plan livré) ; compte 5022 remplacé par 502 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 5023 remplacé par 502 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 5024 remplacé par 502 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 5029 remplacé par 502 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "L21",
+        "codeExport": "L21",
+        "libelle": "Fonds de garantie",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(502)"
+        },
+        "aValider": true,
+        "note": "compte 5021 remplacé par 502 (plan livré)"
+      },
+      {
+        "code": "L22",
+        "codeExport": "L22",
+        "libelle": "Fonds d'assurance",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 5022 remplacé par 502 (plan livré) puis retiré : déjà repris par le sous-poste L21 ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L23",
+        "codeExport": "L23",
+        "libelle": "Fonds de bonification",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 5023 remplacé par 502 (plan livré) puis retiré : déjà repris par le sous-poste L21 ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L24",
+        "codeExport": "L24",
+        "libelle": "Fonds de sécurité",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 5024 remplacé par 502 (plan livré) puis retiré : déjà repris par le sous-poste L21 ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L25",
+        "codeExport": "L25",
+        "libelle": "Autres fonds affectés",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 5029 remplacé par 502 (plan livré) puis retiré : déjà repris par le sous-poste L21 ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L27",
+        "codeExport": "L27",
+        "libelle": "Fonds de crédit",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(503)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L30",
+        "codeExport": "L30",
+        "libelle": "Provisions pour risques et charges",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(511) + SOLDE(519)"
+        },
+        "aValider": true,
+        "note": "compte 512 remplacé par 51 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes"
+      },
+      {
+        "code": "L31",
+        "codeExport": "L31",
+        "libelle": "Provisions pour charges de retraite",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(511)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L32",
+        "codeExport": "L32",
+        "libelle": "Provisions pour risque d'exécution des engagements par signature",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 512 remplacé par 51 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L33",
+        "codeExport": "L33",
+        "libelle": "Autres provisions pour risques et charges",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(519)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L35",
+        "codeExport": "L35",
+        "libelle": "Provisions réglementées",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(52)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L36",
+        "codeExport": "L36",
+        "libelle": "Risques afférents aux crédits MLT",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(521)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L37",
+        "codeExport": "L37",
+        "libelle": "Provision spéciale de réévaluation",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 522 remplacé par 52 (plan livré) puis retiré : compte trop général ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L41",
+        "codeExport": "L41",
+        "libelle": "Emprunts et titres émis subordonnés",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(532)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L43",
+        "codeExport": "L43",
+        "libelle": "Dettes rattachées aux emprunts et titres subordonnés",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(536)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L45",
+        "codeExport": "L45",
+        "libelle": "Fonds pour risques financiers généraux",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(54)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L50",
+        "codeExport": "L50",
+        "libelle": "Primes liées au capital",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(551)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L55",
+        "codeExport": "L55",
+        "libelle": "Réserves",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(5521) + SOLDE(5522) + SOLDE(5523)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L56",
+        "codeExport": "L56",
+        "libelle": "Réserve générale",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(5521)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L57",
+        "codeExport": "L57",
+        "libelle": "Réserves facultatives",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(5522)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L58",
+        "codeExport": "L58",
+        "libelle": "Autres réserves",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(5523)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L59",
+        "codeExport": "L59",
+        "libelle": "Écart de réévaluation des immobilisations",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 553 remplacé par 55 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "L60",
+        "codeExport": "L60",
+        "libelle": "Capital",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(5711) + SOLDE(5712)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L61",
+        "codeExport": "L61",
+        "libelle": "Capital appelé",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(5711)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L62",
+        "codeExport": "L62",
+        "libelle": "Capital non appelé",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(5712)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L65",
+        "codeExport": "L65",
+        "libelle": "Fonds de dotation",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(56)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L70",
+        "codeExport": "L70",
+        "libelle": "Report à nouveau (+ ou -)",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(58)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L75",
+        "codeExport": "L75",
+        "libelle": "Excédent des produits sur les charges (états infra-annuels)",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 3 et point 18 de la note : en cours d'exercice, le résultat des classes 6 et 7 est porté par L80 (signé) ; ce poste reste vide pour ne pas compter deux fois le résultat"
+      },
+      {
+        "code": "L80",
+        "codeExport": "L80",
+        "libelle": "Résultat de l'exercice (+ ou -)",
+        "cote": "PASSIF",
+        "niveau": 1,
+        "formules": {
+          "NET": "SOLDE(59) + SOLDE(6) + SOLDE(7)"
+        },
+        "aValider": true,
+        "note": "le compte 59 n'est mouvementé qu'à la clôture : en cours d'exercice, L80 = 59 + résultat des classes 6 et 7 (produits moins charges), pour que le bilan s'équilibre ; à valider avec le point 3 de la note (états infra-annuels, postes E05 et L75)"
+      },
+      {
+        "code": "L81",
+        "codeExport": "L81",
+        "libelle": "Excédent ou déficit en instance d'approbation",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(591)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L82",
+        "codeExport": "L82",
+        "libelle": "Excédent ou déficit de l'exercice",
+        "cote": "PASSIF",
+        "niveau": 2,
+        "formules": {
+          "NET": "SOLDE(592)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L90",
+        "codeExport": "L90",
+        "libelle": "TOTAL PASSIF",
+        "cote": "PASSIF",
+        "niveau": 0,
+        "formules": {
+          "NET": "PLAGE(F01, L01)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : total retenu = somme des postes qui le composent (la concordance brute de l'appendice A est une extraction automatique à vérifier)"
+      }
+    ],
+    "ratios": [],
+    "controles": [
+      {
+        "libelle": "Total actif (E90) égal au total passif (L90)",
+        "gauche": "POSTE(E90)",
+        "droite": "POSTE(L90)"
+      }
+    ],
+    "remises": [
+      {
+        "condition": null,
+        "periodicite": "ANNUELLE",
+        "delaiJours": 182
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "CODE_EXPORT",
+          "intitule": "Code d'export"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "COLONNE:BRUT",
+          "intitule": "Brut"
+        },
+        {
+          "source": "COLONNE:AMORT",
+          "intitule": "Amortissements et provisions"
+        },
+        {
+          "source": "COLONNE:NET",
+          "intitule": "Net N"
+        },
+        {
+          "source": "COLONNE:NET_N1",
+          "intitule": "Net N-1"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

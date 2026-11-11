@@ -1,0 +1,648 @@
+{
+  "code": "DIMF2080_RESULTAT_ALL",
+  "libelle": "DIMF 2080 : compte de résultat et SIG, version allégée",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Compte de résultat et soldes intermédiaires de gestion DIMF 2080 (version allégée)",
+    "type": "TABLEAU",
+    "referentiel": "SFD_BCEAO",
+    "variante": "ALLEGEE",
+    "colonnes": [
+      {
+        "code": "N",
+        "libelle": "Exercice N",
+        "type": "FORMULE"
+      },
+      {
+        "code": "N_1",
+        "libelle": "Exercice N-1",
+        "type": "PRECEDENTE",
+        "colonneA": "N",
+        "decalage": 1,
+        "unite": "ANNEE"
+      }
+    ],
+    "colonnePrincipale": "N",
+    "postes": [
+      {
+        "code": "R08",
+        "codeExport": "R08",
+        "libelle": "Charges sur opérations avec les institutions financières",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6011) + SOLDE(6015) + SOLDE(6016) + SOLDE(6017) + SOLDE(6018) + SOLDE(6019)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "R3A",
+        "codeExport": "R3A",
+        "libelle": "Charges sur opérations avec les membres, bénéficiaires ou clients",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6025) + SOLDE(6027) + SOLDE(6028) + SOLDE(6029)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "V08",
+        "codeExport": "V08",
+        "libelle": "Produits sur opérations avec les institutions financières",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(7011) + SOLDE(7012) + SOLDE(7013) + SOLDE(7015) + SOLDE(7018) + SOLDE(7019)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "V3A",
+        "codeExport": "V3A",
+        "libelle": "Produits sur opérations avec les membres, bénéficiaires ou clients",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(7021) + SOLDE(7028) + SOLDE(7029) + SOLDE(7025)"
+        },
+        "aValider": true,
+        "note": "compte 7025 rattaché par défaut (feuille du plan livré non reprise par la concordance)"
+      },
+      {
+        "code": "SIG_MARGE_INTERET",
+        "codeExport": "SIG_MARGE_INTERET",
+        "libelle": "Marge d'intérêt bénéficiaire / déficitaire",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {
+          "N": "PLAGE(V08, V3A) - PLAGE(R08, R3A)"
+        },
+        "aValider": true,
+        "note": "code inventé, la note ne codifie pas ce solde intermédiaire de gestion ; produits d'intérêts (V08, V3A) moins charges d'intérêts (R08, R3A)"
+      },
+      {
+        "code": "R4B",
+        "codeExport": "R4B",
+        "libelle": "Charges sur opérations sur titres et opérations diverses",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6031) + SOLDE(6038) + SOLDE(6039)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "R5B",
+        "codeExport": "R5B",
+        "libelle": "Charges sur immobilisations financières",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6041)"
+        },
+        "aValider": true,
+        "note": "compte 60411 remplacé par 6041 (plan livré) ; compte 60412 remplacé par 6041 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "R5E",
+        "codeExport": "R5E",
+        "libelle": "Charges sur crédit-bail et opérations assimilées",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(604) - SOLDE(6041)"
+        },
+        "aValider": true,
+        "note": "compte 6046 remplacé par 604 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 6041 déduit ici pour ne pas le compter deux fois (feuilles actuelles reprises par R5B) ; compte 6047 remplacé par 604 (plan livré), compris dans un compte déjà cité dans ce poste ; le plan livré n'a pas de sous-compte mouvementable propre sous 604 (sous-comptes : 6041) : à compléter avant la recette des états"
+      },
+      {
+        "code": "R5Y",
+        "codeExport": "R5Y",
+        "libelle": "Charges sur emprunts et titres émis subordonnés",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6053)"
+        },
+        "aValider": true,
+        "note": "compte 60532 remplacé par 6053 (plan livré)"
+      },
+      {
+        "code": "R6A",
+        "codeExport": "R6A",
+        "libelle": "Charges sur opérations de change",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 6061 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 6069 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "R6F",
+        "codeExport": "R6F",
+        "libelle": "Charges sur opérations hors bilan",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 6071 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 6072 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 6073 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 6075 remplacé par 60 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "R6V",
+        "codeExport": "R6V",
+        "libelle": "Charges sur prestations de services financiers",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(608)"
+        },
+        "aValider": true,
+        "note": "compte 6081 remplacé par 608 (plan livré) ; compte 6089 remplacé par 608 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "R7A",
+        "codeExport": "R7A",
+        "libelle": "Autres charges d'exploitation financière",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6091) + SOLDE(6098) + SOLDE(6099)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "V4B",
+        "codeExport": "V4B",
+        "libelle": "Produits sur opérations sur titres et opérations diverses",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(703)"
+        },
+        "aValider": true,
+        "note": "compte 7031 remplacé par 703 (plan livré) ; ses sous-comptes actuels sont repris ailleurs et déduits ici : le terme vaut 0 aujourd'hui et reprendra un sous-compte ajouté au plan ; compte 7033 remplacé par 703 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "V5B",
+        "codeExport": "V5B",
+        "libelle": "Produits sur immobilisations financières",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(704)"
+        },
+        "aValider": true,
+        "note": "compte 7041 remplacé par 704 (plan livré)"
+      },
+      {
+        "code": "V5G",
+        "codeExport": "V5G",
+        "libelle": "Produits sur crédit-bail et opérations assimilées",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 7046 remplacé par 704 (plan livré) puis retiré : déjà repris par V5B ; compte 7047 remplacé par 704 (plan livré) puis retiré : déjà repris par V5B ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "V6A",
+        "codeExport": "V6A",
+        "libelle": "Produits sur opérations de change",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 7061 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 7069 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "V6F",
+        "codeExport": "V6F",
+        "libelle": "Produits sur opérations hors bilan",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 7071 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 7072 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 7073 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 7075 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 7076 remplacé par 70 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "V6U",
+        "codeExport": "V6U",
+        "libelle": "Produits sur prestations de services financiers",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(708)"
+        },
+        "aValider": true,
+        "note": "compte 7081 remplacé par 708 (plan livré) ; compte 7089 remplacé par 708 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "V7A",
+        "codeExport": "V7A",
+        "libelle": "Autres produits d'exploitation financière",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(7091) + SOLDE(7098) + SOLDE(7099)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "SIG_AUTRES_PRODUITS_FIN_NETS",
+        "codeExport": "SIG_AUTRES_PRODUITS_FIN_NETS",
+        "libelle": "Autres produits financiers nets / autres charges financières nettes",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {
+          "N": "PLAGE(V4B, V7A) - PLAGE(R4B, R7A)"
+        },
+        "aValider": true,
+        "note": "code inventé, la note ne codifie pas ce solde intermédiaire de gestion ; produits V4B à V7A moins charges R4B à R7A"
+      },
+      {
+        "code": "SIG_PRODUIT_FINANCIER_NET",
+        "codeExport": "SIG_PRODUIT_FINANCIER_NET",
+        "libelle": "Produit financier net / charge financière nette",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {
+          "N": "POSTE(SIG_MARGE_INTERET) + POSTE(SIG_AUTRES_PRODUITS_FIN_NETS)"
+        },
+        "aValider": true,
+        "note": "code inventé, la note ne codifie pas ce solde intermédiaire de gestion ; marge d'intérêt plus autres produits financiers nets"
+      },
+      {
+        "code": "S02",
+        "codeExport": "S02",
+        "libelle": "Frais de personnel",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(641) + SOLDE(642) + SOLDE(643)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S03",
+        "codeExport": "S03",
+        "libelle": "Salaires",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(641)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S04",
+        "codeExport": "S04",
+        "libelle": "Charges sociales",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(642)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S05",
+        "codeExport": "S05",
+        "libelle": "Rémunérations versées aux stagiaires",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(643)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S2A",
+        "codeExport": "S2A",
+        "libelle": "Autres charges externes et charges diverses d'exploitation",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6211) + SOLDE(6212) + SOLDE(6213) + SOLDE(6214) + SOLDE(6215) + SOLDE(6216) + SOLDE(6217) + SOLDE(6218) + SOLDE(6219) + SOLDE(6221) + SOLDE(6222) + SOLDE(6223) + SOLDE(6224) + SOLDE(6225) + SOLDE(6226) + SOLDE(6227) + SOLDE(6228) + SOLDE(6229) + SOLDE(6231) + SOLDE(6232) + SOLDE(6233) + SOLDE(6112) + SOLDE(6116) + SOLDE(6117) + SOLDE(6118) + SOLDE(6119) + SOLDE(612) + SOLDE(6235) + SOLDE(6238) + SOLDE(6239) + SOLDE(631) + SOLDE(632) + SOLDE(633)"
+        },
+        "aValider": true,
+        "note": "point 18 de la note : la concordance de S2A ne reprend ni 6116 (S3A) ni 6235, 6238, 6239 (S4A) ; comptes 6112, 6116, 6117, 6118, 6119, 612, 6235, 6238, 6239, 631, 632, 633 rattachés par défaut (feuille du plan livré non reprise par la concordance)"
+      },
+      {
+        "code": "S2B",
+        "codeExport": "S2B",
+        "libelle": "Services extérieurs",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(6211) + SOLDE(6212) + SOLDE(6213) + SOLDE(6214) + SOLDE(6215) + SOLDE(6216) + SOLDE(6218) + SOLDE(6219)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S3A",
+        "codeExport": "S3A",
+        "libelle": "Autres services extérieurs",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(6221) + SOLDE(6222) + SOLDE(6223) + SOLDE(6224) + SOLDE(6225) + SOLDE(6226) + SOLDE(6227) + SOLDE(6228) + SOLDE(6229) + SOLDE(6116)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "S4A",
+        "codeExport": "S4A",
+        "libelle": "Charges diverses",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(6231) + SOLDE(6232) + SOLDE(6233) + SOLDE(6235) + SOLDE(6238) + SOLDE(6239)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T50",
+        "codeExport": "T50",
+        "libelle": "Dotations au fonds pour risques financiers généraux",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(65)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T51",
+        "codeExport": "T51",
+        "libelle": "Dotations aux amortissements et provisions sur immobilisations",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(661) + SOLDE(662) + SOLDE(663)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6B",
+        "codeExport": "T6B",
+        "libelle": "Dotations aux provisions et pertes sur créances irrécouvrables",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(6641) + SOLDE(6642) + SOLDE(6643) + SOLDE(666) + SOLDE(667) + SOLDE(668) + SOLDE(669)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6K",
+        "codeExport": "T6K",
+        "libelle": "Pertes couvertes",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {
+          "N": "SOLDE(669)"
+        },
+        "aValider": true,
+        "note": "compte 6691 remplacé par 669 (plan livré)"
+      },
+      {
+        "code": "T6L",
+        "codeExport": "T6L",
+        "libelle": "Pertes non couvertes",
+        "cote": "CHARGE",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 6692 remplacé par 669 (plan livré) puis retiré : déjà repris par le sous-poste T6K ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "T80",
+        "codeExport": "T80",
+        "libelle": "Charges exceptionnelles",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(671)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T81",
+        "codeExport": "T81",
+        "libelle": "Pertes sur exercices antérieurs",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(672)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T82",
+        "codeExport": "T82",
+        "libelle": "Impôts sur les excédents",
+        "cote": "CHARGE",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(69)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "W4A",
+        "codeExport": "W4A",
+        "libelle": "Produits divers d'exploitation",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(722) + SOLDE(725) + SOLDE(728) + SOLDE(729) + SOLDE(7111) + SOLDE(7118) + SOLDE(7119)"
+        },
+        "aValider": true,
+        "note": "compte 721 remplacé par 72 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 727 remplacé par 72 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; comptes 7111, 7118, 7119 rattachés par défaut (feuille du plan livré non reprise par la concordance)"
+      },
+      {
+        "code": "W50",
+        "codeExport": "W50",
+        "libelle": "Production immobilisée",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "compte 731 remplacé par 7 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; compte 732 remplacé par 7 (plan livré) puis retiré : compte trop général, il recouvrirait d'autres postes ; aucun compte de la concordance n'existe dans le plan livré : cellule vide"
+      },
+      {
+        "code": "W53",
+        "codeExport": "W53",
+        "libelle": "Subventions d'exploitation",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(74)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "X50",
+        "codeExport": "X50",
+        "libelle": "Reprises du FRFG",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(75)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "X51",
+        "codeExport": "X51",
+        "libelle": "Reprises d'amortissements et provisions sur immobilisations",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(761) + SOLDE(763)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "X6B",
+        "codeExport": "X6B",
+        "libelle": "Reprises de provisions et récupérations sur créances amorties",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(764) + SOLDE(766) + SOLDE(767) + SOLDE(768) + SOLDE(769)"
+        },
+        "aValider": true,
+        "note": "compte 7641 remplacé par 764 (plan livré) ; compte 7642 remplacé par 764 (plan livré), compris dans un compte déjà cité dans ce poste ; compte 7643 remplacé par 764 (plan livré), compris dans un compte déjà cité dans ce poste"
+      },
+      {
+        "code": "X80",
+        "codeExport": "X80",
+        "libelle": "Produits exceptionnels",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(771)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "X81",
+        "codeExport": "X81",
+        "libelle": "Profits sur exercices antérieurs",
+        "cote": "PRODUIT",
+        "niveau": 1,
+        "formules": {
+          "N": "SOLDE(772)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "L80",
+        "codeExport": "L80",
+        "libelle": "Excédent ou déficit",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {
+          "N": "POSTE(SIG_PRODUIT_FINANCIER_NET) + PLAGE(W4A, X81) - PLAGE(S02, T82)"
+        },
+        "aValider": true,
+        "note": "excédent (positif) ou déficit (négatif) = total des produits moins total des charges des postes du modèle, et non le compte 59, qui n'est mouvementé qu'à la clôture ; impôts sur les excédents (T82) compris"
+      },
+      {
+        "code": "T84",
+        "codeExport": "T84",
+        "libelle": "TOTAL CHARGES",
+        "cote": "CHARGE",
+        "niveau": 0,
+        "formules": {
+          "N": "PLAGE(R08, R3A) + PLAGE(R4B, R7A) + PLAGE(S02, T82) + POSITIF(POSTE(L80))"
+        },
+        "aValider": true,
+        "note": "total des rubriques, excédent compris côté charges et déficit compris côté produits (concordance : 60 à 67 + 69 + 59 et 70 à 77 + 59) ; dépend de L80, à valider"
+      },
+      {
+        "code": "X84",
+        "codeExport": "X84",
+        "libelle": "TOTAL PRODUITS",
+        "cote": "PRODUIT",
+        "niveau": 0,
+        "formules": {
+          "N": "PLAGE(V08, V3A) + PLAGE(V4B, V7A) + PLAGE(W4A, X81) + NEGATIF(POSTE(L80))"
+        },
+        "aValider": true,
+        "note": "total des rubriques, excédent compris côté charges et déficit compris côté produits (concordance : 60 à 67 + 69 + 59 et 70 à 77 + 59) ; dépend de L80, à valider"
+      }
+    ],
+    "ratios": [],
+    "controles": [
+      {
+        "libelle": "Total des charges (T84) égal au total des produits (X84)",
+        "gauche": "POSTE(T84)",
+        "droite": "POSTE(X84)"
+      }
+    ],
+    "remises": [
+      {
+        "condition": null,
+        "periodicite": "ANNUELLE",
+        "delaiJours": 182
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "CODE_EXPORT",
+          "intitule": "Code d'export"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "COLONNE:N",
+          "intitule": "Exercice N"
+        },
+        {
+          "source": "COLONNE:N_1",
+          "intitule": "Exercice N-1"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

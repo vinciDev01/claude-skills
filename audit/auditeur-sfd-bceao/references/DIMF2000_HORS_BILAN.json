@@ -1,0 +1,528 @@
+{
+  "code": "DIMF2000_HORS_BILAN",
+  "libelle": "DIMF 2000 : hors bilan",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Hors bilan DIMF 2000",
+    "type": "TABLEAU",
+    "referentiel": "SFD_BCEAO",
+    "variante": "UNIQUE",
+    "colonnes": [
+      {
+        "code": "N",
+        "libelle": "Exercice N",
+        "type": "FORMULE"
+      },
+      {
+        "code": "N_1",
+        "libelle": "Exercice N-1",
+        "type": "PRECEDENTE",
+        "colonneA": "N",
+        "decalage": 1,
+        "unite": "ANNEE"
+      }
+    ],
+    "colonnePrincipale": "N",
+    "postes": [
+      {
+        "code": "HB_FINANCEMENT",
+        "codeExport": "HB_FINANCEMENT",
+        "libelle": "ENGAGEMENTS DE FINANCEMENT",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "N1A",
+        "codeExport": "N1A",
+        "libelle": "Donnés en faveur des institutions financières",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 901)"
+      },
+      {
+        "code": "N1H",
+        "codeExport": "N1H",
+        "libelle": "Reçus des institutions financières",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 902)"
+      },
+      {
+        "code": "N1J",
+        "codeExport": "N1J",
+        "libelle": "Donnés en faveur des membres, bénéficiaires ou clients",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 903)"
+      },
+      {
+        "code": "N1K",
+        "codeExport": "N1K",
+        "libelle": "Reçus des membres, bénéficiaires ou clients",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 904)"
+      },
+      {
+        "code": "HB_GARANTIE",
+        "codeExport": "HB_GARANTIE",
+        "libelle": "ENGAGEMENTS DE GARANTIE",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "N2A",
+        "codeExport": "N2A",
+        "libelle": "D'ordre des institutions financières",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 911)"
+      },
+      {
+        "code": "N2H",
+        "codeExport": "N2H",
+        "libelle": "Reçus des institutions financières",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 912)"
+      },
+      {
+        "code": "N2J",
+        "codeExport": "N2J",
+        "libelle": "D'ordre des membres, bénéficiaires ou clients",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 913)"
+      },
+      {
+        "code": "N2M",
+        "codeExport": "N2M",
+        "libelle": "Reçus des membres, bénéficiaires ou clients",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 914)"
+      },
+      {
+        "code": "HB_TITRES",
+        "codeExport": "HB_TITRES",
+        "libelle": "ENGAGEMENTS SUR TITRES",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "N3A",
+        "codeExport": "N3A",
+        "libelle": "Titres à livrer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9211 + 9212 + 9219)"
+      },
+      {
+        "code": "N3B",
+        "codeExport": "N3B",
+        "libelle": "Intervention à l'émission",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9211)"
+      },
+      {
+        "code": "N3C",
+        "codeExport": "N3C",
+        "libelle": "Marché gris",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9212)"
+      },
+      {
+        "code": "N3D",
+        "codeExport": "N3D",
+        "libelle": "Autres titres à livrer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9219)"
+      },
+      {
+        "code": "N3E",
+        "codeExport": "N3E",
+        "libelle": "Titres à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9221 + 9222 + 9229)"
+      },
+      {
+        "code": "NRF",
+        "codeExport": "NRF",
+        "libelle": "Intervention à l'émission",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9221)"
+      },
+      {
+        "code": "NRG",
+        "codeExport": "NRG",
+        "libelle": "Marché gris",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9222)"
+      },
+      {
+        "code": "N3H",
+        "codeExport": "N3H",
+        "libelle": "Autres titres à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 2,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9229)"
+      },
+      {
+        "code": "HB_DEVISES",
+        "codeExport": "HB_DEVISES",
+        "libelle": "ENGAGEMENTS SUR OPÉRATIONS EN DEVISES",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "P1A",
+        "codeExport": "P1A",
+        "libelle": "Change au comptant : FCFA achetés non reçus",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9311)"
+      },
+      {
+        "code": "P1B",
+        "codeExport": "P1B",
+        "libelle": "Change au comptant : devises achetées non reçues",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9312)"
+      },
+      {
+        "code": "P1C",
+        "codeExport": "P1C",
+        "libelle": "Change au comptant : FCFA vendus non livrés",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9313)"
+      },
+      {
+        "code": "P1D",
+        "codeExport": "P1D",
+        "libelle": "Change au comptant : devises vendues non livrées",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9314)"
+      },
+      {
+        "code": "P1E",
+        "codeExport": "P1E",
+        "libelle": "Devises prêtées non livrées",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9331)"
+      },
+      {
+        "code": "P1F",
+        "codeExport": "P1F",
+        "libelle": "Devises empruntées non reçues",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9332)"
+      },
+      {
+        "code": "P1G",
+        "codeExport": "P1G",
+        "libelle": "Change à terme : FCFA achetés à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9321)"
+      },
+      {
+        "code": "P1H",
+        "codeExport": "P1H",
+        "libelle": "Change à terme : devises achetées à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9322)"
+      },
+      {
+        "code": "P1J",
+        "codeExport": "P1J",
+        "libelle": "Change à terme : FCFA vendus à livrer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9323)"
+      },
+      {
+        "code": "P1K",
+        "codeExport": "P1K",
+        "libelle": "Change à terme : devises vendues à livrer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9324)"
+      },
+      {
+        "code": "P1L",
+        "codeExport": "P1L",
+        "libelle": "Report/déport non couru à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9341)"
+      },
+      {
+        "code": "P1M",
+        "codeExport": "P1M",
+        "libelle": "Report/déport non couru à payer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9342)"
+      },
+      {
+        "code": "P1R",
+        "codeExport": "P1R",
+        "libelle": "Intérêts non courus en devises couverts à recevoir",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9351)"
+      },
+      {
+        "code": "P1S",
+        "codeExport": "P1S",
+        "libelle": "Intérêts non courus en devises couverts à payer",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9352)"
+      },
+      {
+        "code": "P1V",
+        "codeExport": "P1V",
+        "libelle": "Ajustements devises hors bilan",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 936)"
+      },
+      {
+        "code": "HB_AUTRES",
+        "codeExport": "HB_AUTRES",
+        "libelle": "AUTRES ENGAGEMENTS",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "Q1A",
+        "codeExport": "Q1A",
+        "libelle": "Engagements donnés",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 951)"
+      },
+      {
+        "code": "Q1B",
+        "codeExport": "Q1B",
+        "libelle": "Engagements reçus",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 952)"
+      },
+      {
+        "code": "HB_TIERS",
+        "codeExport": "HB_TIERS",
+        "libelle": "OPÉRATIONS EFFECTUÉES POUR LE COMPTE DE TIERS",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : intitulé de rubrique sans montant (les engagements donnés et reçus ne s'additionnent pas)"
+      },
+      {
+        "code": "Q1C",
+        "codeExport": "Q1C",
+        "libelle": "Valeurs à l'encaissement non disponibles",
+        "cote": "HORS_BILAN_RECU",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9611 + 9613)"
+      },
+      {
+        "code": "Q1F",
+        "codeExport": "Q1F",
+        "libelle": "Comptes exigibles après encaissements",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9612 + 9614)"
+      },
+      {
+        "code": "Q1J",
+        "codeExport": "Q1J",
+        "libelle": "Suivi des engagements de financement consortiaux",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9621)"
+      },
+      {
+        "code": "Q1K",
+        "codeExport": "Q1K",
+        "libelle": "Suivi des engagements de garantie consortiaux",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9631)"
+      },
+      {
+        "code": "Q1L",
+        "codeExport": "Q1L",
+        "libelle": "Suivi des crédits consortiaux",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9651)"
+      },
+      {
+        "code": "Q1M",
+        "codeExport": "Q1M",
+        "libelle": "Crédits distribués pour le compte de tiers",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 1,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 9661)"
+      },
+      {
+        "code": "N90",
+        "codeExport": "N90",
+        "libelle": "ENGAGEMENTS DOUTEUX",
+        "cote": "HORS_BILAN_DONNE",
+        "niveau": 0,
+        "formules": {},
+        "aValider": true,
+        "note": "point 15 de la note : le modèle mêle engagements donnés et reçus sur une seule colonne et la codification ne précise pas le côté ; côté retenu par déduction du libellé ; aucun compte de classe 9 dans le plan livré : cellule vide (concordance : 99)"
+      }
+    ],
+    "ratios": [],
+    "controles": [],
+    "remises": [
+      {
+        "condition": null,
+        "periodicite": "ANNUELLE",
+        "delaiJours": 182
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "CODE_EXPORT",
+          "intitule": "Code d'export"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "COLONNE:N",
+          "intitule": "Exercice N"
+        },
+        {
+          "source": "COLONNE:N_1",
+          "intitule": "Exercice N-1"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

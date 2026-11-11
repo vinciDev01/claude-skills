@@ -1,0 +1,682 @@
+{
+  "code": "INDICATEURS_NON_FINANCIERS_020",
+  "libelle": "Instruction 020 : indicateurs non financiers",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Indicateurs non financiers (instruction 020)",
+    "type": "TABLEAU",
+    "referentiel": "SFD_BCEAO",
+    "variante": "UNIQUE",
+    "colonnes": [
+      {
+        "code": "T",
+        "libelle": "Période (T)",
+        "type": "FORMULE"
+      },
+      {
+        "code": "T_1",
+        "libelle": "Période (T-1)",
+        "type": "PRECEDENTE",
+        "colonneA": "T",
+        "decalage": 1,
+        "unite": "MOIS"
+      },
+      {
+        "code": "VARIATION",
+        "libelle": "Variation (%)",
+        "type": "VARIATION",
+        "colonneA": "T",
+        "colonneB": "T_1"
+      }
+    ],
+    "colonnePrincipale": "T",
+    "postes": [
+      {
+        "code": "T1",
+        "codeExport": "T1",
+        "libelle": "Tableau 1 : membres, bénéficiaires ou clients",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_TOTAL",
+        "codeExport": "T1_TOTAL",
+        "libelle": "Total des membres, bénéficiaires ou clients (groupements comptés pour un)",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T1_PP) + POSTE(T1_GROUPEMENTS)"
+        },
+        "aValider": true,
+        "note": "« (2) » lu comme le nombre de groupements, chacun compté pour un : la note du tableau ne nomme pas la ligne (2)"
+      },
+      {
+        "code": "T1_PP",
+        "codeExport": "T1_PP",
+        "libelle": "(1) Personnes physiques non membres d'un groupement",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "POSTE(T1_PP_HOMMES) + POSTE(T1_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_PP_HOMMES",
+        "codeExport": "T1_PP_HOMMES",
+        "libelle": "Personnes physiques non membres d'un groupement : hommes (a)",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T1_PP_HOMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_PP_FEMMES",
+        "codeExport": "T1_PP_FEMMES",
+        "libelle": "Personnes physiques non membres d'un groupement : femmes (b)",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T1_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_GROUPEMENTS",
+        "codeExport": "T1_GROUPEMENTS",
+        "libelle": "(2) Groupements, comptés pour un",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T1_GROUPEMENTS)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_MEMBRES_GROUPEMENTS",
+        "codeExport": "T1_MEMBRES_GROUPEMENTS",
+        "libelle": "Total des membres des groupements",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T1_MEMBRES_GROUPEMENTS_HOMMES) + POSTE(T1_MEMBRES_GROUPEMENTS_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_MEMBRES_GROUPEMENTS_HOMMES",
+        "codeExport": "T1_MEMBRES_GROUPEMENTS_HOMMES",
+        "libelle": "Membres des groupements : hommes (c)",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T1_MEMBRES_GROUPEMENTS_HOMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T1_MEMBRES_GROUPEMENTS_FEMMES",
+        "codeExport": "T1_MEMBRES_GROUPEMENTS_FEMMES",
+        "libelle": "Membres des groupements : femmes (d)",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T1_MEMBRES_GROUPEMENTS_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2",
+        "codeExport": "T2",
+        "libelle": "Tableau 2 : dirigeants et personnel",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_MEMBRES_CA",
+        "codeExport": "T2_MEMBRES_CA",
+        "libelle": "Membres du conseil d'administration ou de l'organe équivalent",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T2_MEMBRES_CA)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_MEMBRES_CONSEIL_SURVEILLANCE",
+        "codeExport": "T2_MEMBRES_CONSEIL_SURVEILLANCE",
+        "libelle": "Membres du conseil de surveillance",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T2_MEMBRES_CONSEIL_SURVEILLANCE)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_MEMBRES_COMITE_CREDIT",
+        "codeExport": "T2_MEMBRES_COMITE_CREDIT",
+        "libelle": "Membres du comité de crédit",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T2_MEMBRES_COMITE_CREDIT)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_EFFECTIF",
+        "codeExport": "T2_EFFECTIF",
+        "libelle": "Effectif total du personnel",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T2_DIRIGEANTS) + POSTE(T2_AUTRES_EMPLOYES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_DIRIGEANTS",
+        "codeExport": "T2_DIRIGEANTS",
+        "libelle": "(1) Dirigeants",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_DIRIGEANTS)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_AUTRES_EMPLOYES",
+        "codeExport": "T2_AUTRES_EMPLOYES",
+        "libelle": "(2) Autres employés",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_AUTRES_EMPLOYES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_NATIONAUX_CDI",
+        "codeExport": "T2_NATIONAUX_CDI",
+        "libelle": "Personnel national en contrat à durée indéterminée",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_NATIONAUX_CDI)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_NATIONAUX_CDD",
+        "codeExport": "T2_NATIONAUX_CDD",
+        "libelle": "Personnel national en contrat à durée déterminée",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_NATIONAUX_CDD)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_EXPATRIES_CDI",
+        "codeExport": "T2_EXPATRIES_CDI",
+        "libelle": "Personnel expatrié en contrat à durée indéterminée",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_EXPATRIES_CDI)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T2_EXPATRIES_CDD",
+        "codeExport": "T2_EXPATRIES_CDD",
+        "libelle": "Personnel expatrié en contrat à durée déterminée",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T2_EXPATRIES_CDD)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3",
+        "codeExport": "T3",
+        "libelle": "Tableau 3 : déposants",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3_TOTAL",
+        "codeExport": "T3_TOTAL",
+        "libelle": "Nombre total de déposants",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T3_PP) + POSTE(T3_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3_PP",
+        "codeExport": "T3_PP",
+        "libelle": "(1) Personnes physiques non membres d'un groupement",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "POSTE(T3_PP_HOMMES) + POSTE(T3_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3_PP_HOMMES",
+        "codeExport": "T3_PP_HOMMES",
+        "libelle": "Personnes physiques : hommes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T3_PP_HOMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3_PP_FEMMES",
+        "codeExport": "T3_PP_FEMMES",
+        "libelle": "Personnes physiques : femmes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T3_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T3_PERSONNES_MORALES",
+        "codeExport": "T3_PERSONNES_MORALES",
+        "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T3_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4",
+        "codeExport": "T4",
+        "libelle": "Tableau 4 : crédits en cours (nombre)",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4_TOTAL",
+        "codeExport": "T4_TOTAL",
+        "libelle": "Nombre total de crédits en cours",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T4_PP) + POSTE(T4_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4_PP",
+        "codeExport": "T4_PP",
+        "libelle": "(1) Personnes physiques",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "POSTE(T4_PP_HOMMES) + POSTE(T4_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4_PP_HOMMES",
+        "codeExport": "T4_PP_HOMMES",
+        "libelle": "Personnes physiques : hommes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T4_PP_HOMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4_PP_FEMMES",
+        "codeExport": "T4_PP_FEMMES",
+        "libelle": "Personnes physiques : femmes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T4_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T4_PERSONNES_MORALES",
+        "codeExport": "T4_PERSONNES_MORALES",
+        "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T4_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T5",
+        "codeExport": "T5",
+        "libelle": "Tableau 5 : répartition des crédits selon leur objet",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T5_IMMOBILIERS",
+        "codeExport": "T5_IMMOBILIERS",
+        "libelle": "Crédits immobiliers",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T5_IMMOBILIERS)"
+        },
+        "aValider": true,
+        "note": "montant relevé en francs CFA, alors que le tableau de l'instruction est présenté en milliers de francs CFA ; encours à la date d'arrêté, lecture à confirmer (le tableau ne précise pas encours ou octrois)"
+      },
+      {
+        "code": "T5_EQUIPEMENT",
+        "codeExport": "T5_EQUIPEMENT",
+        "libelle": "Crédits d'équipement",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T5_EQUIPEMENT)"
+        },
+        "aValider": true,
+        "note": "montant relevé en francs CFA, alors que le tableau de l'instruction est présenté en milliers de francs CFA ; encours à la date d'arrêté, lecture à confirmer (le tableau ne précise pas encours ou octrois)"
+      },
+      {
+        "code": "T5_CONSOMMATION",
+        "codeExport": "T5_CONSOMMATION",
+        "libelle": "Crédits à la consommation",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T5_CONSOMMATION)"
+        },
+        "aValider": true,
+        "note": "montant relevé en francs CFA, alors que le tableau de l'instruction est présenté en milliers de francs CFA ; encours à la date d'arrêté, lecture à confirmer (le tableau ne précise pas encours ou octrois)"
+      },
+      {
+        "code": "T5_TRESORERIE",
+        "codeExport": "T5_TRESORERIE",
+        "libelle": "Crédits de trésorerie",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T5_TRESORERIE)"
+        },
+        "aValider": true,
+        "note": "montant relevé en francs CFA, alors que le tableau de l'instruction est présenté en milliers de francs CFA ; encours à la date d'arrêté, lecture à confirmer (le tableau ne précise pas encours ou octrois)"
+      },
+      {
+        "code": "T5_AUTRES",
+        "codeExport": "T5_AUTRES",
+        "libelle": "Autres crédits",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T5_AUTRES)"
+        },
+        "aValider": true,
+        "note": "montant relevé en francs CFA, alors que le tableau de l'instruction est présenté en milliers de francs CFA ; encours à la date d'arrêté, lecture à confirmer (le tableau ne précise pas encours ou octrois)"
+      },
+      {
+        "code": "T6",
+        "codeExport": "T6",
+        "libelle": "Tableau 6 : crédits en souffrance (nombre)",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6_TOTAL",
+        "codeExport": "T6_TOTAL",
+        "libelle": "Nombre total de crédits en souffrance",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "POSTE(T6_PP) + POSTE(T6_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6_PP",
+        "codeExport": "T6_PP",
+        "libelle": "(1) Personnes physiques",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "POSTE(T6_PP_HOMMES) + POSTE(T6_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6_PP_HOMMES",
+        "codeExport": "T6_PP_HOMMES",
+        "libelle": "Personnes physiques : hommes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T6_PP_HOMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6_PP_FEMMES",
+        "codeExport": "T6_PP_FEMMES",
+        "libelle": "Personnes physiques : femmes",
+        "cote": "AUCUN",
+        "niveau": 3,
+        "formules": {
+          "T": "GRANDEUR(T6_PP_FEMMES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T6_PERSONNES_MORALES",
+        "codeExport": "T6_PERSONNES_MORALES",
+        "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+        "cote": "AUCUN",
+        "niveau": 2,
+        "formules": {
+          "T": "GRANDEUR(T6_PERSONNES_MORALES)"
+        },
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T7",
+        "codeExport": "T7",
+        "libelle": "Tableau 7 : surveillance",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {},
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "T7_INSTITUTIONS_AFFILIEES",
+        "codeExport": "T7_INSTITUTIONS_AFFILIEES",
+        "libelle": "Institutions affiliées",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_INSTITUTIONS_AFFILIEES)"
+        },
+        "aValider": true,
+        "note": "ligne propre aux faîtières des réseaux mutualistes"
+      },
+      {
+        "code": "T7_AFFILIEES_CONTROLEES",
+        "codeExport": "T7_AFFILIEES_CONTROLEES",
+        "libelle": "Institutions affiliées contrôlées",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_AFFILIEES_CONTROLEES)"
+        },
+        "aValider": true,
+        "note": "ligne propre aux faîtières des réseaux mutualistes"
+      },
+      {
+        "code": "T7_TAUX_RECOMMANDATIONS",
+        "codeExport": "T7_TAUX_RECOMMANDATIONS",
+        "libelle": "Taux de mise en œuvre des recommandations des contrôles",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_TAUX_RECOMMANDATIONS)"
+        },
+        "aValider": true,
+        "note": "pourcentage relevé, affiché à l'unité : la cellule d'un tableau est arrondie à l'entier"
+      },
+      {
+        "code": "T7_REUNIONS_CONSEIL_SURVEILLANCE",
+        "codeExport": "T7_REUNIONS_CONSEIL_SURVEILLANCE",
+        "libelle": "Réunions du conseil de surveillance",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_REUNIONS_CONSEIL_SURVEILLANCE)"
+        },
+        "aValider": true,
+        "note": "ligne propre aux faîtières des réseaux mutualistes"
+      },
+      {
+        "code": "T7_AGENCES_POINTS_SERVICE",
+        "codeExport": "T7_AGENCES_POINTS_SERVICE",
+        "libelle": "Agences ou points de service",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_AGENCES_POINTS_SERVICE)"
+        },
+        "aValider": true,
+        "note": "ligne propre aux institutions non mutualistes"
+      },
+      {
+        "code": "T7_RAPPORTS_CONTROLE_INTERNE",
+        "codeExport": "T7_RAPPORTS_CONTROLE_INTERNE",
+        "libelle": "Rapports de contrôle interne",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "T": "GRANDEUR(T7_RAPPORTS_CONTROLE_INTERNE)"
+        },
+        "aValider": true,
+        "note": "ligne propre aux institutions non mutualistes"
+      }
+    ],
+    "ratios": [],
+    "controles": [],
+    "remises": [
+      {
+        "condition": {
+          "article44": true,
+          "collecteDepots": null,
+          "mutuelleAffiliee": null
+        },
+        "periodicite": "MENSUELLE",
+        "delaiJours": 30
+      },
+      {
+        "condition": null,
+        "periodicite": "TRIMESTRIELLE",
+        "delaiJours": 30
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "COLONNE:T",
+          "intitule": "Période (T)"
+        },
+        {
+          "source": "COLONNE:T_1",
+          "intitule": "Période (T-1)"
+        },
+        {
+          "source": "COLONNE:VARIATION",
+          "intitule": "Variation (%)"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

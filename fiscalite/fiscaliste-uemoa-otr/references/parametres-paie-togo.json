@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "pays": "Togo",
+    "verifie_le": "2026-11-11",
+    "applicable": "salariés du secteur privé, exercices 2024 à 2026 (aucune modification de ces paramètres par la loi de finances 2026 selon le Cahier fiscal 2026 de l'OTR)",
+    "avertissement": "Vérifier à chaque nouvelle loi de finances (Cahier fiscal OTR) et à chaque décret CNSS / AMU avant usage."
+  },
+  "smig_mensuel": {
+    "valeur": 52500,
+    "source": "SMIG en vigueur depuis le 1er janvier 2023 (CLEISS, fiche Togo au 1er janvier 2026)"
+  },
+  "cnss": {
+    "taux_salarial": 0.04,
+    "taux_patronal": {
+      "prestations_familiales": 0.03,
+      "risques_professionnels": 0.02,
+      "pensions": 0.125
+    },
+    "plafond_mensuel": null,
+    "plancher": "SMIG",
+    "assiette": "rémunération hors remboursements de frais et prestations familiales",
+    "echeance": "15 du mois suivant",
+    "source": "cnss.tg (pages Cotisations sociales et Taux de cotisations), CLEISS 2026 ; loi n° 2011-006 art. 17 pour l'échéance"
+  },
+  "amu": {
+    "taux_salarial": 0.05,
+    "taux_patronal": 0.05,
+    "plafond_mensuel": null,
+    "plancher": "SMIG",
+    "assiette": "salaire de base et ensemble des primes et indemnités imposables, hors remboursements de frais et prestations familiales",
+    "echeance": "15 du mois suivant",
+    "source": "décret n° 2023-096/PR du 4 octobre 2023, art. 9, 10, 12 et 29 (JO du 25 novembre 2023), en vigueur au 1er janvier 2024"
+  },
+  "irpp": {
+    "limite_deduction_retraite_pct_brut": 0.06,
+    "abattement_frais_pro": {
+      "taux": 0.28,
+      "plafond_base_annuelle": 10000000,
+      "source": "CGI art. 26 (abattement appliqué après déduction des cotisations retraite, sociales et avantages en nature)"
+    },
+    "charges_de_famille": {
+      "montant_annuel_par_personne": 120000,
+      "max_personnes": 6,
+      "source": "CGI art. 72 (personnes à charge) et 73 (10 000 FCFA par personne et par mois)"
+    },
+    "bareme_annuel": [
+      {"jusqu_a": 900000, "taux": 0.0},
+      {"jusqu_a": 3000000, "taux": 0.03},
+      {"jusqu_a": 6000000, "taux": 0.10},
+      {"jusqu_a": 9000000, "taux": 0.15},
+      {"jusqu_a": 12000000, "taux": 0.20},
+      {"jusqu_a": 15000000, "taux": 0.25},
+      {"jusqu_a": 20000000, "taux": 0.30},
+      {"jusqu_a": null, "taux": 0.35}
+    ],
+    "arrondi_revenu": 1000,
+    "arrondi_impot": 10,
+    "source_bareme": "CGI art. 74 (barème issu de la loi n° 2022-022 portant loi de finances 2023), revenu arrondi au millier inférieur, impôt à la dizaine inférieure",
+    "sources_secondaires_concordantes": [
+      "https://auditcomtogo.com/irpp-togo-bareme-retenue-salaires/",
+      "https://www.lqdd.org/irpp-togo-bareme-calcul-2026/"
+    ]
+  }
+}

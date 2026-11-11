@@ -1,0 +1,302 @@
+{
+  "code": "RATIOS_PRUDENTIELS_010_016",
+  "libelle": "Instructions 010 et 016 : ratios prudentiels",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Ratios prudentiels (instructions 010 et 016) : état récapitulatif",
+    "type": "RATIOS",
+    "referentiel": "SFD_BCEAO",
+    "variante": "UNIQUE",
+    "colonnes": [
+      {
+        "code": "N",
+        "libelle": "Valeur",
+        "type": "FORMULE"
+      }
+    ],
+    "colonnePrincipale": "N",
+    "postes": [],
+    "ratios": [
+      {
+        "code": "I",
+        "codeExport": "I",
+        "libelle": "Limitation des risques auxquels est exposée l'institution",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:A12) + POSTE(DIMF2000_BILAN_DEV:A2A) + POSTE(DIMF2000_BILAN_DEV:A3A) + POSTE(DIMF2000_BILAN_DEV:A70) + POSTE(DIMF2000_BILAN_DEV:B2D) + POSTE(DIMF2000_BILAN_DEV:B2N) + POSTE(DIMF2000_BILAN_DEV:B30) + POSTE(DIMF2000_BILAN_DEV:B70) + POSTE(DIMF2000_BILAN_DEV:C10) + POSTE(DIMF2000_BILAN_DEV:D1E)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:F1A) + POSTE(DIMF2000_BILAN_DEV:F2A) + POSTE(DIMF2000_BILAN_DEV:F3A) + POSTE(DIMF2000_BILAN_DEV:F50) + POSTE(DIMF2000_BILAN_DEV:G10) + POSTE(DIMF2000_BILAN_DEV:G15) + POSTE(DIMF2000_BILAN_DEV:G2A) + POSTE(DIMF2000_BILAN_DEV:G35) + POSTE(DIMF2000_BILAN_DEV:G60) + POSTE(DIMF2000_BILAN_DEV:G70) + POSTE(DIMF2000_BILAN_DEV:L01)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 200,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "postes omis : B40, D1L (poste vide faute de compte dans le plan livré) ; engagements par signature donnés (N1A + N1J + N3A + Q1A) omis : le modèle DIMF2000_HORS_BILAN est vide, aucun compte de classe 9 dans le plan livré (point 15)"
+      },
+      {
+        "code": "II",
+        "codeExport": "II",
+        "libelle": "Couverture des emplois à moyen et long terme par des ressources stables",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:L01) + POSTE(DIMF2000_BILAN_DEV:F3F) + GRANDEUR(R2_F2A_PLUS_UN_AN) + GRANDEUR(R2_F50_PLUS_UN_AN) + GRANDEUR(R2_G15_PLUS_UN_AN) + GRANDEUR(R2_G2A_PLUS_UN_AN) + GRANDEUR(R2_G30_PLUS_UN_AN) + GRANDEUR(R2_G35_PLUS_UN_AN) + GRANDEUR(R2_G60_PLUS_UN_AN) + GRANDEUR(R2_G70_PLUS_UN_AN)",
+        "denominateur": "GRANDEUR(R2_A2H_PLUS_UN_AN) + GRANDEUR(R2_A2I_PLUS_UN_AN) + GRANDEUR(R2_A2J_PLUS_UN_AN) + POSTE(DIMF2000_BILAN_DEV:A3C) + POSTE(DIMF2000_BILAN_DEV:A70) + POSTE(DIMF2000_BILAN_DEV:B30) + POSTE(DIMF2000_BILAN_DEV:B70) + POSTE(DIMF2000_BILAN_DEV:D1E) + POSTE(DIMF2000_BILAN_DEV:D1S) + POSTE(DIMF2000_BILAN_DEV:D23) + POSTE(DIMF2000_BILAN_DEV:D30)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 100,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "parts à plus d'un an de durée résiduelle de F2A, F50, G15, G2A, G30, G35, G60, G70 (ressources) et de A2H, A2I, A2J (emplois) saisies : la comptabilité ne ventile pas ces postes par échéance ; postes omis : B40, D1L, D10, D40 (poste vide faute de compte dans le plan livré) ; remis chaque mois avec l'état récapitulatif, trimestriel dans le texte"
+      },
+      {
+        "code": "III",
+        "codeExport": "III",
+        "libelle": "Limitation des prêts aux dirigeants, au personnel et aux personnes liées",
+        "numerateur": "GRANDEUR(R3_PRETS_DIRIGEANTS_PERSONNEL)",
+        "denominateur": "POSTE(FONDS_PROPRES:FP)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 10,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 7 : fonds propres FP du modèle FONDS_PROPRES, même définition pour tous les ratios (l'annexe III ne cite pas L30) ; montant relevé sur l'état détaillé des crédits (DIMF 2013)"
+      },
+      {
+        "code": "IV",
+        "codeExport": "IV",
+        "libelle": "Limitation des risques pris sur une seule signature",
+        "numerateur": "GRANDEUR(R4_PLUS_GROS_EMPRUNTEUR)",
+        "denominateur": "POSTE(FONDS_PROPRES:FP)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 10,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 7 : fonds propres FP du modèle FONDS_PROPRES, même définition pour tous les ratios ; montant relevé sur l'état DIMF 2012"
+      },
+      {
+        "code": "V",
+        "codeExport": "V",
+        "libelle": "Coefficient de liquidité",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:A10) + POSTE(DIMF2000_BILAN_DEV:A12) + GRANDEUR(R5_A2J_COURT_TERME) + POSTE(DIMF2000_BILAN_DEV:A2A) + POSTE(DIMF2000_BILAN_DEV:A3B) + POSTE(DIMF2000_BILAN_DEV:B2D) + POSTE(DIMF2000_BILAN_DEV:B2N) + POSTE(DIMF2000_BILAN_DEV:B30) + POSTE(DIMF2000_BILAN_DEV:C10) + POSTE(DIMF2000_BILAN_DEV:C30) + POSTE(DIMF2000_BILAN_DEV:C40) + POSTE(DIMF2000_BILAN_DEV:A60) + POSTE(DIMF2000_BILAN_DEV:B65) + POSTE(DIMF2000_BILAN_DEV:C55)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:F1A) + POSTE(DIMF2000_BILAN_DEV:F2A) + POSTE(DIMF2000_BILAN_DEV:F3E) + POSTE(DIMF2000_BILAN_DEV:F3F) + POSTE(DIMF2000_BILAN_DEV:F50) + POSTE(DIMF2000_BILAN_DEV:G10) + GRANDEUR(R5_G15_COURT_TERME) + POSTE(DIMF2000_BILAN_DEV:G2A) + POSTE(DIMF2000_BILAN_DEV:G30) + POSTE(DIMF2000_BILAN_DEV:G35) + POSTE(DIMF2000_BILAN_DEV:G60) + POSTE(DIMF2000_BILAN_DEV:G70) + GRANDEUR(R5_H10_COURT_TERME) + GRANDEUR(R5_H40_COURT_TERME) + POSTE(DIMF2000_BILAN_DEV:F60) + POSTE(DIMF2000_BILAN_DEV:G90)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 80,
+            "condition": {
+              "article44": null,
+              "collecteDepots": null,
+              "mutuelleAffiliee": true
+            },
+            "aValider": true
+          },
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 100,
+            "condition": {
+              "article44": null,
+              "collecteDepots": true,
+              "mutuelleAffiliee": null
+            },
+            "aValider": true
+          },
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 60,
+            "condition": {
+              "article44": null,
+              "collecteDepots": false,
+              "mutuelleAffiliee": null
+            },
+            "aValider": true
+          }
+        ],
+        "aValider": true,
+        "note": "point 8 : texte appliqué à la lettre, engagements donnés au numérateur et reçus au dénominateur ; A2J (court terme) et A2A cités tous deux, comme dans le texte, alors que A2A comprend A2J ; parts à trois mois au plus de A2J, G15, H10 et H40 saisies : la comptabilité ne ventile pas ces postes par échéance ; postes omis : B40, C56 (poste vide faute de compte dans le plan livré) ; engagements de financement et de garantie N1A, N1J, N2A, N2J (donnés) et N1H, N1K, N2H, N2M (reçus) omis : le modèle DIMF2000_HORS_BILAN est vide, aucun compte de classe 9 dans le plan livré (point 15) ; norme : 80 % pour une mutuelle affiliée, 100 % pour un autre SFD qui collecte des dépôts, 60 % sinon (première condition satisfaite)"
+      },
+      {
+        "code": "VI",
+        "codeExport": "VI",
+        "libelle": "Limitation des opérations autres que l'épargne et le crédit",
+        "numerateur": "GRANDEUR(R6_ACTIVITES_AUTRES)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:A12) + POSTE(DIMF2000_BILAN_DEV:A2A) + POSTE(DIMF2000_BILAN_DEV:A3A) + POSTE(DIMF2000_BILAN_DEV:A70) + POSTE(DIMF2000_BILAN_DEV:B2D) + POSTE(DIMF2000_BILAN_DEV:B2N) + POSTE(DIMF2000_BILAN_DEV:B30) + POSTE(DIMF2000_BILAN_DEV:B70) + POSTE(DIMF2000_BILAN_DEV:C10) + POSTE(DIMF2000_BILAN_DEV:D1E)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 5,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "dénominateur : risques nets du numérateur du ratio I ; postes omis : B40, D1L (poste vide faute de compte dans le plan livré) ; engagements par signature donnés (N1A + N1J + N3A + Q1A) omis : le modèle DIMF2000_HORS_BILAN est vide, aucun compte de classe 9 dans le plan livré (point 15) ; montant relevé sur l'état DIMF 2011 ; remis chaque mois avec l'état récapitulatif, trimestriel dans le texte"
+      },
+      {
+        "code": "VII",
+        "codeExport": "VII",
+        "libelle": "Constitution de la réserve générale",
+        "numerateur": "GRANDEUR(R7_DOTATION_RESERVE_GENERALE)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:L80) - NEGATIF(POSTE(DIMF2000_BILAN_DEV:L70))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 15,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "base = résultat L80 diminué du report à nouveau déficitaire (L70 négatif), avant ristourne ou dividendes ; la dotation est relevée pour la période de l'état alors que L80 cumule le résultat depuis l'ouverture de l'exercice : à rapprocher sur l'état annuel ; remis chaque mois avec l'état récapitulatif, trimestriel dans le texte"
+      },
+      {
+        "code": "VIII",
+        "codeExport": "VIII",
+        "libelle": "Norme de capitalisation",
+        "numerateur": "POSTE(FONDS_PROPRES:FP)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:E90)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 15,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 7 : fonds propres FP du modèle FONDS_PROPRES, même définition pour tous les ratios"
+      },
+      {
+        "code": "IX",
+        "codeExport": "IX",
+        "libelle": "Limitation des prises de participation",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:D1E) - GRANDEUR(FP_PARTICIPATIONS_SFD_EC)",
+        "denominateur": "POSTE(FONDS_PROPRES:FP)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 25,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 7 : fonds propres FP du modèle FONDS_PROPRES, même définition pour tous les ratios ; participations dans des SFD ou établissements de crédit : même relevé que la déduction des fonds propres ; remis chaque mois avec l'état récapitulatif, trimestriel dans le texte"
+      },
+      {
+        "code": "INSTR016",
+        "codeExport": "INSTR016",
+        "libelle": "Financement des immobilisations et des participations (instruction 016)",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:D24) + POSTE(DIMF2000_BILAN_DEV:D25) + POSTE(DIMF2000_BILAN_DEV:D31) + POSTE(DIMF2000_BILAN_DEV:D36) - GRANDEUR(I016_FRAIS_VALEURS_IMMOBILISES) + POSTE(DIMF2000_BILAN_DEV:D1E) - GRANDEUR(FP_PARTICIPATIONS_SFD_EC)",
+        "denominateur": "POSTE(FONDS_PROPRES:FP)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 100,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 7 : fonds propres FP du modèle FONDS_PROPRES, même définition pour tous les ratios ; postes omis : D41, D45, D46, D47 (poste vide faute de compte dans le plan livré) ; la déduction des biens acquis par réalisation de garantie depuis moins de deux ans (D46, D47) est donc sans objet ; frais et valeurs immobilisés de D31 et participations dans des SFD ou établissements de crédit saisis ; remis chaque mois avec l'état récapitulatif, trimestriel dans le texte"
+      }
+    ],
+    "controles": [],
+    "remises": [
+      {
+        "condition": null,
+        "periodicite": "MENSUELLE",
+        "delaiJours": 30
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "CODE_EXPORT",
+          "intitule": "Code d'export"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "NUMERATEUR",
+          "intitule": "Numérateur"
+        },
+        {
+          "source": "DENOMINATEUR",
+          "intitule": "Dénominateur"
+        },
+        {
+          "source": "VALEUR",
+          "intitule": "Valeur"
+        },
+        {
+          "source": "NORME",
+          "intitule": "Norme"
+        },
+        {
+          "source": "ECART",
+          "intitule": "Écart"
+        },
+        {
+          "source": "CONFORMITE",
+          "intitule": "Conformité"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

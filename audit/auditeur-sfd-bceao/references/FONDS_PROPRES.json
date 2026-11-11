@@ -1,0 +1,82 @@
+{
+  "code": "FONDS_PROPRES",
+  "libelle": "Fonds propres (FP) des ratios prudentiels",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Fonds propres des ratios prudentiels (instructions 010 et 016)",
+    "type": "TABLEAU",
+    "referentiel": "SFD_BCEAO",
+    "variante": "UNIQUE",
+    "colonnes": [
+      {
+        "code": "N",
+        "libelle": "Montant",
+        "type": "FORMULE"
+      }
+    ],
+    "colonnePrincipale": "N",
+    "postes": [
+      {
+        "code": "FP_ELEMENTS",
+        "codeExport": "FP_ELEMENTS",
+        "libelle": "Éléments constitutifs des fonds propres",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "N": "POSTE(DIMF2000_BILAN_DEV:L10) + POSTE(DIMF2000_BILAN_DEV:L20) + POSTE(DIMF2000_BILAN_DEV:L27) + POSTE(DIMF2000_BILAN_DEV:L30) + POSTE(DIMF2000_BILAN_DEV:L35) + POSTE(DIMF2000_BILAN_DEV:L41) + POSTE(DIMF2000_BILAN_DEV:L45) + POSTE(DIMF2000_BILAN_DEV:L50) + POSTE(DIMF2000_BILAN_DEV:L55) + POSTE(DIMF2000_BILAN_DEV:L60) + POSTE(DIMF2000_BILAN_DEV:L65) + POSITIF(POSTE(DIMF2000_BILAN_DEV:L70)) + POSITIF(POSTE(DIMF2000_BILAN_DEV:L80))"
+        },
+        "aValider": true,
+        "note": "postes omis : L59 (poste vide faute de compte dans le plan livré)"
+      },
+      {
+        "code": "FP_DEDUCTIONS",
+        "codeExport": "FP_DEDUCTIONS",
+        "libelle": "Éléments à déduire des fonds propres",
+        "cote": "AUCUN",
+        "niveau": 1,
+        "formules": {
+          "N": "POSTE(DIMF2000_BILAN_DEV:L62) + POSTE(DIMF2000_BILAN_DEV:D24) + POSTE(DIMF2000_BILAN_DEV:D31) + NEGATIF(POSTE(DIMF2000_BILAN_DEV:L70)) + NEGATIF(POSTE(DIMF2000_BILAN_DEV:L80)) + GRANDEUR(FP_COMPLEMENT_PROVISIONS) + GRANDEUR(FP_PARTICIPATIONS_SFD_EC)"
+        },
+        "aValider": true,
+        "note": "immobilisations incorporelles nettes : D24 + D31 ; postes omis : D41, D46 (poste vide faute de compte dans le plan livré) ; E05 omis (états infra-annuels, poste laissé vide)"
+      },
+      {
+        "code": "FP",
+        "codeExport": "FP",
+        "libelle": "Fonds propres (FP)",
+        "cote": "AUCUN",
+        "niveau": 0,
+        "formules": {
+          "N": "POSTE(FP_ELEMENTS) - POSTE(FP_DEDUCTIONS)"
+        },
+        "aValider": true,
+        "note": "point 7 : même définition pour les ratios III, IV, VIII, IX et l'instruction 016, alors que l'annexe III ne cite pas L30 ; L75 et E05 (états infra-annuels) omis : postes laissés vides au bilan livré pour ne pas compter le résultat deux fois ; postes omis : L59, D41, D46 (poste vide faute de compte dans le plan livré)"
+      }
+    ],
+    "ratios": [],
+    "controles": [],
+    "remises": [],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "COLONNE:N",
+          "intitule": "Montant"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

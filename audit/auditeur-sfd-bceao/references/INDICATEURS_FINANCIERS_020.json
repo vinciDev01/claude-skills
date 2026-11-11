@@ -1,0 +1,565 @@
+{
+  "code": "INDICATEURS_FINANCIERS_020",
+  "libelle": "Instruction 020 : indicateurs financiers",
+  "dateEffet": "2000-01-01",
+  "definition": {
+    "libelle": "Indicateurs financiers (instruction 020)",
+    "type": "RATIOS",
+    "referentiel": "SFD_BCEAO",
+    "variante": "UNIQUE",
+    "colonnes": [
+      {
+        "code": "N",
+        "libelle": "Valeur",
+        "type": "FORMULE"
+      }
+    ],
+    "colonnePrincipale": "N",
+    "postes": [],
+    "ratios": [
+      {
+        "code": "PAR30",
+        "codeExport": "PAR30",
+        "libelle": "Portefeuille à risque à 30 jours",
+        "numerateur": "GRANDEUR(ENCOURS_RISQUE_30J)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 5,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "PAR90",
+        "codeExport": "PAR90",
+        "libelle": "Portefeuille à risque à 90 jours",
+        "numerateur": "GRANDEUR(ENCOURS_RISQUE_90J)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 3,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "PAR180",
+        "codeExport": "PAR180",
+        "libelle": "Portefeuille à risque à 180 jours",
+        "numerateur": "GRANDEUR(ENCOURS_RISQUE_180J)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 2,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "TAUX_PROVISIONNEMENT",
+        "codeExport": "TAUX_PROVISIONNEMENT",
+        "libelle": "Taux de provisionnement des créances en souffrance",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:B70, AMORT)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:B70, BRUT)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 40,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "TAUX_PERTE",
+        "codeExport": "TAUX_PERTE",
+        "libelle": "Taux de perte sur créances",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:T6K)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 2,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "postes omis : T6L (poste vide faute de compte dans le plan livré) ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "MONTANT_MOYEN_DECAISSE",
+        "codeExport": "MONTANT_MOYEN_DECAISSE",
+        "libelle": "Montant moyen des crédits décaissés",
+        "numerateur": "MVTD(2022) - MVTD(20227) + MVTD(2023) + MVTD(2031)",
+        "denominateur": "GRANDEUR(NB_CREDITS_DECAISSES)",
+        "sens": "DEBIT",
+        "unite": "NOMBRE",
+        "normes": [
+          {
+            "type": "TENDANCE_HAUSSIERE",
+            "stricte": false,
+            "valeur": null,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "total décaissé = mouvements débit des crédits à court terme (2022 hors créances rattachées 20227, découverts 2023) et à moyen terme (2031) ; crédits à long terme omis : aucun compte 204 dans le plan livré ; un reclassement débité sur ces comptes serait compté comme un décaissement"
+      },
+      {
+        "code": "EPARGNE_MOYENNE",
+        "codeExport": "EPARGNE_MOYENNE",
+        "libelle": "Épargne moyenne par épargnant",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:G10) + POSTE(DIMF2000_BILAN_DEV:G15) + POSTE(DIMF2000_BILAN_DEV:G2A) + POSTE(DIMF2000_BILAN_DEV:G30) + POSTE(DIMF2000_BILAN_DEV:G35)",
+        "denominateur": "GRANDEUR(NB_EPARGNANTS)",
+        "sens": "DEBIT",
+        "unite": "NOMBRE",
+        "normes": [
+          {
+            "type": "TENDANCE_HAUSSIERE",
+            "stricte": false,
+            "valeur": null,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "ENCOURS_MOYEN_EMPRUNTEUR",
+        "codeExport": "ENCOURS_MOYEN_EMPRUNTEUR",
+        "libelle": "Encours moyen par emprunteur",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT)",
+        "denominateur": "GRANDEUR(NB_EMPRUNTEURS)",
+        "sens": "DEBIT",
+        "unite": "NOMBRE",
+        "normes": [
+          {
+            "type": "TENDANCE_HAUSSIERE",
+            "stricte": false,
+            "valeur": null,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "PRODUCTIVITE_AGENTS",
+        "codeExport": "PRODUCTIVITE_AGENTS",
+        "libelle": "Productivité des agents de crédit",
+        "numerateur": "GRANDEUR(NB_EMPRUNTEURS_ACTIFS)",
+        "denominateur": "GRANDEUR(NB_AGENTS_CREDIT)",
+        "sens": "DEBIT",
+        "unite": "NOMBRE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": false,
+            "valeur": 130,
+            "condition": null,
+            "aValider": true
+          }
+        ],
+        "aValider": true,
+        "note": "point 13 : norme lue 130, le PDF affiche « 1301 » (130 suivi de l'appel de note 1) ; un écart dû aux spécificités de l'institution est à justifier"
+      },
+      {
+        "code": "PRODUCTIVITE_PERSONNEL",
+        "codeExport": "PRODUCTIVITE_PERSONNEL",
+        "libelle": "Productivité du personnel",
+        "numerateur": "GRANDEUR(NB_CLIENTS_ACTIFS)",
+        "denominateur": "GRANDEUR(NB_EMPLOYES)",
+        "sens": "DEBIT",
+        "unite": "NOMBRE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 115,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "CHARGES_EXPLOITATION_PORTEFEUILLE",
+        "codeExport": "CHARGES_EXPLOITATION_PORTEFEUILLE",
+        "libelle": "Charges d'exploitation sur portefeuille",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A) + POSTE(DIMF2080_RESULTAT_DEV:R8G) + POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50) + POSTE(DIMF2080_RESULTAT_DEV:T51) + POSTE(DIMF2080_RESULTAT_DEV:T6B)",
+        "denominateur": "MOYENNE(POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 35,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; charges d'exploitation = (R08 à T6B) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A + R8G + S02 + S1A + S2A + T50 + T51 + T6B ; omis : R6A, R6F (poste vide faute de compte dans le plan livré) ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "FRAIS_GENERAUX_PORTEFEUILLE",
+        "codeExport": "FRAIS_GENERAUX_PORTEFEUILLE",
+        "libelle": "Frais généraux sur portefeuille",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50)",
+        "denominateur": "MOYENNE(POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 15,
+            "condition": {
+              "article44": null,
+              "collecteDepots": false,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          },
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 20,
+            "condition": {
+              "article44": null,
+              "collecteDepots": true,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; frais généraux = (S02 à T50) énumérée : S02 + S1A + S2A + T50 ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "CHARGES_PERSONNEL_PORTEFEUILLE",
+        "codeExport": "CHARGES_PERSONNEL_PORTEFEUILLE",
+        "libelle": "Charges de personnel sur portefeuille",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:S02)",
+        "denominateur": "MOYENNE(POSTE(DIMF2000_BILAN_DEV:B01, BRUT) - POSTE(DIMF2000_BILAN_DEV:B65, BRUT))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 5,
+            "condition": {
+              "article44": null,
+              "collecteDepots": false,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          },
+          {
+            "type": "MAXIMUM",
+            "stricte": true,
+            "valeur": 10,
+            "condition": {
+              "article44": null,
+              "collecteDepots": true,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "RENTABILITE_FONDS_PROPRES",
+        "codeExport": "RENTABILITE_FONDS_PROPRES",
+        "libelle": "Rentabilité des fonds propres",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) + POSTE(DIMF2080_RESULTAT_DEV:V8B) + POSTE(DIMF2080_RESULTAT_DEV:V8C) + POSTE(DIMF2080_RESULTAT_DEV:W4A) + POSTE(DIMF2080_RESULTAT_DEV:X50) + POSTE(DIMF2080_RESULTAT_DEV:X51) + POSTE(DIMF2080_RESULTAT_DEV:X6B) - (POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A) + POSTE(DIMF2080_RESULTAT_DEV:R8G) + POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50) + POSTE(DIMF2080_RESULTAT_DEV:T51) + POSTE(DIMF2080_RESULTAT_DEV:T6B))",
+        "denominateur": "MOYENNE(POSTE(DIMF2000_BILAN_DEV:L01))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 15,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; résultat d'exploitation RE = PE - CE ; produits d'exploitation = (V08 à X6B) - W53 énumérée : V08 + V3A + V4B + V5B + V6U + V7A + V8B + V8C + W4A + X50 + X51 + X6B ; omis : V5G, V6A, V6F, W50 (poste vide faute de compte dans le plan livré) ; charges d'exploitation = (R08 à T6B) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A + R8G + S02 + S1A + S2A + T50 + T51 + T6B ; omis : R6A, R6F (poste vide faute de compte dans le plan livré) ; fonds propres moyens = moyenne de L01 (instruction 020), et non les fonds propres retraités des ratios prudentiels ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "RENDEMENT_ACTIF",
+        "codeExport": "RENDEMENT_ACTIF",
+        "libelle": "Rendement sur actif",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) + POSTE(DIMF2080_RESULTAT_DEV:V8B) + POSTE(DIMF2080_RESULTAT_DEV:V8C) + POSTE(DIMF2080_RESULTAT_DEV:W4A) + POSTE(DIMF2080_RESULTAT_DEV:X50) + POSTE(DIMF2080_RESULTAT_DEV:X51) + POSTE(DIMF2080_RESULTAT_DEV:X6B) - (POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A) + POSTE(DIMF2080_RESULTAT_DEV:R8G) + POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50) + POSTE(DIMF2080_RESULTAT_DEV:T51) + POSTE(DIMF2080_RESULTAT_DEV:T6B))",
+        "denominateur": "MOYENNE(POSTE(DIMF2000_BILAN_DEV:E90))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 3,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; produits d'exploitation = (V08 à X6B) - W53 énumérée : V08 + V3A + V4B + V5B + V6U + V7A + V8B + V8C + W4A + X50 + X51 + X6B ; omis : V5G, V6A, V6F, W50 (poste vide faute de compte dans le plan livré) ; charges d'exploitation = (R08 à T6B) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A + R8G + S02 + S1A + S2A + T50 + T51 + T6B ; omis : R6A, R6F (poste vide faute de compte dans le plan livré) ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "AUTOSUFFISANCE_OPERATIONNELLE",
+        "codeExport": "AUTOSUFFISANCE_OPERATIONNELLE",
+        "libelle": "Autosuffisance opérationnelle",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) + POSTE(DIMF2080_RESULTAT_DEV:V8B) + POSTE(DIMF2080_RESULTAT_DEV:V8C) + POSTE(DIMF2080_RESULTAT_DEV:W4A) + POSTE(DIMF2080_RESULTAT_DEV:X50) + POSTE(DIMF2080_RESULTAT_DEV:X51) + POSTE(DIMF2080_RESULTAT_DEV:X6B)",
+        "denominateur": "POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A) + POSTE(DIMF2080_RESULTAT_DEV:R8G) + POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50) + POSTE(DIMF2080_RESULTAT_DEV:T51) + POSTE(DIMF2080_RESULTAT_DEV:T6B)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 130,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; produits d'exploitation = (V08 à X6B) - W53 énumérée : V08 + V3A + V4B + V5B + V6U + V7A + V8B + V8C + W4A + X50 + X51 + X6B ; omis : V5G, V6A, V6F, W50 (poste vide faute de compte dans le plan livré) ; charges d'exploitation = (R08 à T6B) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A + R8G + S02 + S1A + S2A + T50 + T51 + T6B ; omis : R6A, R6F (poste vide faute de compte dans le plan livré)"
+      },
+      {
+        "code": "MARGE_BENEFICIAIRE",
+        "codeExport": "MARGE_BENEFICIAIRE",
+        "libelle": "Marge bénéficiaire",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) + POSTE(DIMF2080_RESULTAT_DEV:V8B) + POSTE(DIMF2080_RESULTAT_DEV:V8C) + POSTE(DIMF2080_RESULTAT_DEV:W4A) + POSTE(DIMF2080_RESULTAT_DEV:X50) + POSTE(DIMF2080_RESULTAT_DEV:X51) + POSTE(DIMF2080_RESULTAT_DEV:X6B) - (POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A) + POSTE(DIMF2080_RESULTAT_DEV:R8G) + POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50) + POSTE(DIMF2080_RESULTAT_DEV:T51) + POSTE(DIMF2080_RESULTAT_DEV:T6B))",
+        "denominateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) + POSTE(DIMF2080_RESULTAT_DEV:V8B) + POSTE(DIMF2080_RESULTAT_DEV:V8C) + POSTE(DIMF2080_RESULTAT_DEV:W4A) + POSTE(DIMF2080_RESULTAT_DEV:X50) + POSTE(DIMF2080_RESULTAT_DEV:X51) + POSTE(DIMF2080_RESULTAT_DEV:X6B)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 20,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; produits d'exploitation = (V08 à X6B) - W53 énumérée : V08 + V3A + V4B + V5B + V6U + V7A + V8B + V8C + W4A + X50 + X51 + X6B ; omis : V5G, V6A, V6F, W50 (poste vide faute de compte dans le plan livré) ; charges d'exploitation = (R08 à T6B) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A + R8G + S02 + S1A + S2A + T50 + T51 + T6B ; omis : R6A, R6F (poste vide faute de compte dans le plan livré)"
+      },
+      {
+        "code": "COEFFICIENT_EXPLOITATION",
+        "codeExport": "COEFFICIENT_EXPLOITATION",
+        "libelle": "Coefficient d'exploitation",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:S02) + POSTE(DIMF2080_RESULTAT_DEV:S1A) + POSTE(DIMF2080_RESULTAT_DEV:S2A) + POSTE(DIMF2080_RESULTAT_DEV:T50)",
+        "denominateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A) - (POSTE(DIMF2080_RESULTAT_DEV:R08) + POSTE(DIMF2080_RESULTAT_DEV:R3A) + POSTE(DIMF2080_RESULTAT_DEV:R4B) + POSTE(DIMF2080_RESULTAT_DEV:R5B) + POSTE(DIMF2080_RESULTAT_DEV:R5E) + POSTE(DIMF2080_RESULTAT_DEV:R5Y) + POSTE(DIMF2080_RESULTAT_DEV:R6V) + POSTE(DIMF2080_RESULTAT_DEV:R7A))",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 40,
+            "condition": {
+              "article44": null,
+              "collecteDepots": false,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          },
+          {
+            "type": "MAXIMUM",
+            "stricte": false,
+            "valeur": 60,
+            "condition": {
+              "article44": null,
+              "collecteDepots": true,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; frais généraux = (S02 à T50) énumérée : S02 + S1A + S2A + T50 ; produits financiers = (V08 à V7A) énumérée : V08 + V3A + V4B + V5B + V6U + V7A ; omis : V5G, V6A, V6F (poste vide faute de compte dans le plan livré) ; charges financières = (R08 à R7A) énumérée : R08 + R3A + R4B + R5B + R5E + R5Y + R6V + R7A ; omis : R6A, R6F (poste vide faute de compte dans le plan livré)"
+      },
+      {
+        "code": "TAUX_RENDEMENT_ACTIFS",
+        "codeExport": "TAUX_RENDEMENT_ACTIFS",
+        "libelle": "Taux de rendement des actifs",
+        "numerateur": "POSTE(DIMF2080_RESULTAT_DEV:V08) + POSTE(DIMF2080_RESULTAT_DEV:V3A) + POSTE(DIMF2080_RESULTAT_DEV:V4B) + POSTE(DIMF2080_RESULTAT_DEV:V5B) + POSTE(DIMF2080_RESULTAT_DEV:V6U) + POSTE(DIMF2080_RESULTAT_DEV:V7A)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:A01) - POSTE(DIMF2000_BILAN_DEV:A10) - POSTE(DIMF2000_BILAN_DEV:A60) - POSTE(DIMF2000_BILAN_DEV:A70) + POSTE(DIMF2000_BILAN_DEV:B01) - POSTE(DIMF2000_BILAN_DEV:B65) - POSTE(DIMF2000_BILAN_DEV:B70) + POSTE(DIMF2000_BILAN_DEV:C10) + POSTE(DIMF2000_BILAN_DEV:D1A)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 15,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": true,
+        "note": "point 12 : plage du compte de résultat lue comme la somme des rubriques de niveau 1 de la plage, sans double compte des détails ; produits financiers = (V08 à V7A) énumérée : V08 + V3A + V4B + V5B + V6U + V7A ; omis : V5G, V6A, V6F (poste vide faute de compte dans le plan livré) ; postes omis : C56 (poste vide faute de compte dans le plan livré) ; numérateur cumulé depuis le début de l'exercice, norme annuelle : à comparer en fin d'exercice ou à annualiser (point pour le comptable)"
+      },
+      {
+        "code": "LIQUIDITE_ACTIF",
+        "codeExport": "LIQUIDITE_ACTIF",
+        "libelle": "Ratio de liquidité de l'actif",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:A10) + POSTE(DIMF2000_BILAN_DEV:A12) + POSTE(DIMF2000_BILAN_DEV:A2H) + POSTE(DIMF2000_BILAN_DEV:A2J) + POSTE(DIMF2000_BILAN_DEV:C10)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:E90)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 2,
+            "condition": {
+              "article44": null,
+              "collecteDepots": false,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          },
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 5,
+            "condition": {
+              "article44": null,
+              "collecteDepots": true,
+              "mutuelleAffiliee": null
+            },
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      },
+      {
+        "code": "CAPITALISATION",
+        "codeExport": "CAPITALISATION",
+        "libelle": "Ratio de capitalisation",
+        "numerateur": "POSTE(DIMF2000_BILAN_DEV:L01)",
+        "denominateur": "POSTE(DIMF2000_BILAN_DEV:E90)",
+        "sens": "DEBIT",
+        "unite": "POURCENTAGE",
+        "normes": [
+          {
+            "type": "MINIMUM",
+            "stricte": true,
+            "valeur": 15,
+            "condition": null,
+            "aValider": false
+          }
+        ],
+        "aValider": false,
+        "note": null
+      }
+    ],
+    "controles": [],
+    "remises": [
+      {
+        "condition": {
+          "article44": true,
+          "collecteDepots": null,
+          "mutuelleAffiliee": null
+        },
+        "periodicite": "MENSUELLE",
+        "delaiJours": 30
+      },
+      {
+        "condition": null,
+        "periodicite": "TRIMESTRIELLE",
+        "delaiJours": 30
+      }
+    ],
+    "format": {
+      "separateur": ";",
+      "entete": true,
+      "colonnes": [
+        {
+          "source": "CODE",
+          "intitule": "Code"
+        },
+        {
+          "source": "CODE_EXPORT",
+          "intitule": "Code d'export"
+        },
+        {
+          "source": "LIBELLE",
+          "intitule": "Libellé"
+        },
+        {
+          "source": "NUMERATEUR",
+          "intitule": "Numérateur"
+        },
+        {
+          "source": "DENOMINATEUR",
+          "intitule": "Dénominateur"
+        },
+        {
+          "source": "VALEUR",
+          "intitule": "Valeur"
+        },
+        {
+          "source": "NORME",
+          "intitule": "Norme"
+        },
+        {
+          "source": "ECART",
+          "intitule": "Écart"
+        },
+        {
+          "source": "CONFORMITE",
+          "intitule": "Conformité"
+        },
+        {
+          "source": "MENTIONS",
+          "intitule": "Mentions"
+        }
+      ]
+    }
+  }
+}

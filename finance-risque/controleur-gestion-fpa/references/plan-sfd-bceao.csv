@@ -1,0 +1,381 @@
+numero;libelle;parent;nature;collectif;lettrable;declinable_par_agence
+1;OPERATIONS DE TRESORERIE ET AVEC LES INSTITUTIONS FINANCIERES;;ACTIF;false;false;false
+2;OPERATIONS AVEC LES MEMBRES, BENEFICIAIRES OU CLIENTS;;ACTIF;false;false;false
+3;OPERATIONS SUR TITRES ET OPERATIONS DIVERSES;;ACTIF;false;false;false
+4;VALEURS IMMOBILISEES;;ACTIF;false;false;false
+5;PROVISIONS, FONDS PROPRES ET ASSIMILES;;PASSIF;false;false;false
+6;COMPTES DE CHARGES;;CHARGE;false;false;false
+7;COMPTES DE PRODUITS;;PRODUIT;false;false;false
+10;VALEURS EN CAISSE;1;ACTIF;false;false;false
+11;COMPTES ORDINAIRES CHEZ LES INSTITUTIONS FINANCIERES;1;ACTIF;false;false;false
+12;AUTRES COMPTES DE DEPOTS CHEZ LES INSTITUTIONS FINANCIERES;1;ACTIF;false;false;false
+13;COMPTES DE PRETS AUX INSTITUTIONS FINANCIERES;1;ACTIF;false;false;false
+15;COMPTES ORDINAIRES DES INSTITUTIONS FINANCIERES;1;PASSIF;false;false;false
+16;AUTRES COMPTES DE DEPOTS DES INSTITUTIONS FINANCIERES;1;PASSIF;false;false;false
+17;COMPTES D'EMPRUNTS ET AUTRES SOMMES DUES AUX INSTITUTIONS FINANCIERES;1;PASSIF;false;false;false
+18;RESSOURCES AFFECTEES;1;PASSIF;false;false;false
+19;COMPTES DE PRETS EN SOUFFRANCE ET IMMOBILISES;1;ACTIF;false;false;false
+20;CREDITS AUX MEMBRES, BENEFICIAIRES OU CLIENTS;2;ACTIF;false;false;false
+25;COMPTES DES MEMBRES, BENEFICIAIRES OU CLIENTS;2;PASSIF;false;false;false
+27;EMPRUNTS ET AUTRES SOMMES DUES AUX MEMBRES, BENEFICIAIRES OU CLIENTS;2;PASSIF;false;false;false
+29;COMPTES DE CREDITS EN SOUFFRANCE;2;ACTIF;false;false;false
+30;TITRES DE PLACEMENT;3;ACTIF;false;false;false
+32;COMPTES DE STOCKS ET EMPLOIS DIVERS;3;ACTIF;false;false;false
+33;DEBITEURS ET CREDITEURS DIVERS;3;ACTIF;false;false;false
+37;COMPTES TRANSITOIRES ET D'ATTENTE;3;ACTIF;false;false;false
+38;COMPTES DE REGULARISATION;3;ACTIF;false;false;false
+41;IMMOBILISATIONS FINANCIERES;4;ACTIF;false;false;false
+42;DEPOTS ET CAUTIONNEMENTS;4;ACTIF;false;false;false
+43;IMMOBILISATIONS EN COURS;4;ACTIF;false;false;false
+44;IMMOBILISATIONS D'EXPLOITATION;4;ACTIF;false;false;false
+50;SUBVENTIONS ET AUTRES FONDS RECUS;5;PASSIF;false;false;false
+51;PROVISIONS POUR RISQUES ET CHARGES;5;PASSIF;false;false;false
+52;PROVISIONS REGLEMENTEES;5;PASSIF;false;false;false
+53;EMPRUNTS ET TITRES EMIS SUBORDONNES;5;PASSIF;false;false;false
+54;FONDS POUR RISQUES FINANCIERS GENERAUX;5;PASSIF;false;false;false
+55;PRIMES LIEES AU CAPITAL ET RESERVES;5;PASSIF;false;false;false
+56;FONDS DE DOTATION;5;PASSIF;false;false;false
+57;CAPITAL SOCIAL;5;PASSIF;false;false;false
+58;REPORT A NOUVEAU;5;PASSIF;false;false;false
+59;RESULTAT;5;PASSIF;false;false;false
+60;CHARGES D'EXPLOITATION FINANCIERE;6;CHARGE;false;false;false
+61;ACHATS ET VARIATIONS DE STOCKS;6;CHARGE;false;false;false
+62;AUTRES CHARGES EXTERNES ET CHARGES DIVERSES D'EXPLOITATION;6;CHARGE;false;false;false
+63;IMPOTS, TAXES ET VERSEMENTS ASSIMILES;6;CHARGE;false;false;false
+64;CHARGES DE PERSONNEL;6;CHARGE;false;false;false
+65;DOTATION AU FONDS POUR RISQUES FINANCIERS GENERAUX;6;CHARGE;false;false;false
+66;DOTATIONS AUX AMORTISSEMENTS, AUX PROVISIONS ET PERTES SUR CREANCES IRRECOUVRABLES;6;CHARGE;false;false;false
+67;CHARGES EXCEPTIONNELLES ET PERTES SUR EXERCICES ANTERIEURS;6;CHARGE;false;false;false
+69;IMPOTS SUR LES EXCEDENTS;6;CHARGE;false;false;false
+70;PRODUITS D'EXPLOITATION FINANCIERE;7;PRODUIT;false;false;false
+71;VENTES;7;PRODUIT;false;false;false
+72;PRODUITS DIVERS D'EXPLOITATION;7;PRODUIT;false;false;false
+74;SUBVENTIONS D'EXPLOITATION;7;PRODUIT;false;false;false
+75;REPRISES DU FONDS POUR RISQUES FINANCIERS GENERAUX;7;PRODUIT;false;false;false
+76;REPRISES D'AMORTISSEMENTS, DE PROVISIONS ET RECUPERATIONS SUR CREANCES IRRECOUVRABLES;7;PRODUIT;false;false;false
+77;PRODUITS EXCEPTIONNELS ET PROFITS SUR EXERCICES ANTERIEURS;7;PRODUIT;false;false;false
+101;Billets et monnaies;10;ACTIF;false;false;false
+113;Centre des Chèques postaux;11;ACTIF;false;false;false
+114;Banques et correspondants;11;ACTIF;false;false;false
+116;Systèmes Financiers Décentralisés;11;ACTIF;false;false;false
+117;Autres institutions financières;11;ACTIF;false;false;false
+126;Dépôts à terme constitués;12;ACTIF;false;false;false
+127;Dépôts de garantie constitués;12;ACTIF;false;false;false
+128;Autres dépôts constitués;12;ACTIF;false;false;false
+131;Prêts à moins d'1 an;13;ACTIF;false;false;false
+133;Prêts à terme;13;ACTIF;false;false;false
+154;Banques et correspondants;15;PASSIF;false;false;false
+156;Systèmes Financiers Décentralisés;15;PASSIF;false;false;false
+157;Autres institutions financières;15;PASSIF;false;false;false
+161;Dépôts à terme reçus;16;PASSIF;false;false;false
+162;Dépôts de garantie reçus;16;PASSIF;false;false;false
+165;Autres dépôts reçus;16;PASSIF;false;false;false
+175;Emprunts à moins d'un an;17;PASSIF;false;false;false
+178;Emprunts à terme;17;PASSIF;false;false;false
+179;Autres sommes dues aux institutions financières;17;PASSIF;false;false;false
+181;Ressources affectées à court terme;18;PASSIF;false;false;false
+182;Ressources affectées à moyen terme;18;PASSIF;false;false;false
+183;Ressources affectées à long terme;18;PASSIF;false;false;false
+184;Intérêts capitalisés;18;PASSIF;false;false;false
+191;Prêts immobilisés;19;ACTIF;false;false;false
+192;Prêts en souffrance de 6 mois au plus;19;ACTIF;false;false;false
+193;Prêts en souffrance de plus de 6 mois à 12 mois au plus;19;ACTIF;false;false;false
+194;Prêts en souffrance de plus de 12 mois à 24 mois au plus;19;ACTIF;false;false;false
+199;Provisions sur prêts en souffrance;19;PASSIF;false;false;false
+202;Crédits à court terme;20;ACTIF;false;false;false
+203;Crédits à moyen terme;20;ACTIF;false;false;false
+251;Comptes ordinaires;25;PASSIF;false;false;false
+252;Dépôts à terme reçus;25;PASSIF;false;false;false
+253;Comptes d'épargne à régime spécial (livrets d'épargne, comptes d'épargne-logement, plan d'épargne-logement);25;PASSIF;false;false;false
+254;Dépôts de garantie reçus;25;PASSIF;false;false;false
+255;Autres dépôts reçus;25;PASSIF;false;false;false
+271;Emprunts aux membres, bénéficiaires ou clients;27;PASSIF;false;false;false
+272;Autres sommes dues aux membres, bénéficiaires ou clients;27;PASSIF;false;false;false
+291;Crédits immobilisés;29;ACTIF;false;false;false
+292;Crédits en souffrance de 6 mois au plus;29;ACTIF;false;false;false
+293;Crédits en souffrance de plus de 6 mois à 12 mois au plus;29;ACTIF;false;false;false
+294;Crédits en souffrance de plus de 12 mois à 24 mois au plus;29;ACTIF;false;false;false
+299;Provisions sur crédits en souffrance;29;PASSIF;false;false;false
+305;Versements restant à effectuer;30;ACTIF;false;false;false
+307;Créances rattachées;30;ACTIF;false;false;false
+309;Provisions pour dépréciation;30;PASSIF;false;false;false
+321;Stocks de biens meubles;32;ACTIF;false;false;false
+322;Stocks de marchandises;32;ACTIF;false;false;false
+323;Stocks de fournitures;32;ACTIF;false;false;false
+331;Débiteurs divers;33;ACTIF;false;false;false
+332;Créditeurs divers;33;PASSIF;false;false;false
+378;Autres comptes transitoires;37;ACTIF;false;false;false
+379;Comptes d'attente;37;ACTIF;false;false;false
+381;Comptes de régularisation - actif;38;ACTIF;false;false;false
+382;Comptes de régularisation - passif;38;PASSIF;false;false;false
+412;Titres de participation;41;ACTIF;false;false;false
+421;Dépôts et cautionnements;42;ACTIF;false;false;false
+427;Créances rattachées;42;ACTIF;false;false;false
+429;Provisions pour dépréciation des dépôts et cautionnements;42;PASSIF;false;false;false
+431;Immobilisations incorporelles en cours;43;ACTIF;false;false;false
+432;Immobilisations corporelles en cours;43;ACTIF;false;false;false
+441;Immobilisations incorporelles;44;ACTIF;false;false;false
+442;Immobilisations corporelles;44;ACTIF;false;false;false
+501;Subventions d'investissement;50;PASSIF;false;false;false
+502;Fonds affectés (Fonds de garantie, fonds d'assurance, fonds de bonification, fonds de sécurité);50;PASSIF;false;false;false
+503;Fonds de crédit;50;PASSIF;false;false;false
+511;Provisions pour charges de retraite;51;PASSIF;false;false;false
+519;Autres provisions pour risques et charges;51;PASSIF;false;false;false
+521;Provisions pour risques afférents aux opérations de crédits à moyen et long termes;52;PASSIF;false;false;false
+532;Emprunts et titres émis subordonnés;53;PASSIF;false;false;false
+536;Dettes rattachées;53;PASSIF;false;false;false
+551;Primes liées au capital;55;PASSIF;false;false;false
+552;Réserves;55;PASSIF;false;false;false
+571;Capital;57;PASSIF;false;false;false
+573;Actionnaires, associés ou membres;57;PASSIF;false;false;false
+591;Excédent ou déficit en instance d'approbation;59;PASSIF;false;false;false
+592;Excédent ou déficit de l'exercice;59;PASSIF;false;false;false
+593;Marge;59;PASSIF;false;false;false
+594;Produit financier net ou charge financière nette;59;PASSIF;false;false;false
+595;Excédent ou déficit d'exploitation;59;PASSIF;false;false;false
+596;Excédent ou déficit exceptionnel;59;PASSIF;false;false;false
+601;Charges sur opérations avec les institutions financières;60;CHARGE;false;false;false
+602;Charges sur opérations avec les membres, bénéficiaires ou clients;60;CHARGE;false;false;false
+603;Charges sur opérations sur titres et sur opérations diverses;60;CHARGE;false;false;false
+604;Charges sur valeurs immobilisées;60;CHARGE;false;false;false
+605;Charges sur fonds propres et assimilés;60;CHARGE;false;false;false
+608;Charges sur prestations de services financiers;60;CHARGE;false;false;false
+609;Autres charges d'exploitation financière;60;CHARGE;false;false;false
+611;Achats;61;CHARGE;false;false;false
+612;Variations de stocks;61;CHARGE;false;false;false
+621;Services extérieurs;62;CHARGE;false;false;false
+622;Autres services extérieurs;62;CHARGE;false;false;false
+623;Charges diverses d'exploitation;62;CHARGE;false;false;false
+631;Impôts, taxes et versements assimilés sur rémunérations;63;CHARGE;false;false;false
+632;Autres impôts, taxes et prélèvements assimilés versés à l'Administration des impôts;63;CHARGE;false;false;false
+633;Autres impôts, taxes et prélèvements assimilés versés aux autres organismes;63;CHARGE;false;false;false
+641;Salaires et traitements;64;CHARGE;false;false;false
+642;Charges sociales;64;CHARGE;false;false;false
+643;Rémunérations versées aux stagiaires;64;CHARGE;false;false;false
+661;Dotations aux amortissements des immobilisations;66;CHARGE;false;false;false
+662;Dotations aux amortissements des charges à répartir;66;CHARGE;false;false;false
+663;Dotations aux provisions pour dépréciation des immobilisations;66;CHARGE;false;false;false
+664;Dotations aux provisions sur créances en souffrance;66;CHARGE;false;false;false
+666;Dotations aux provisions pour dépréciation des autres éléments d'actif;66;CHARGE;false;false;false
+667;Dotations aux provisions pour risques et charges;66;CHARGE;false;false;false
+668;Dotations aux provisions réglementées;66;CHARGE;false;false;false
+669;Pertes sur créances irrécouvrables;66;CHARGE;false;false;false
+671;Charges exceptionnelles;67;CHARGE;false;false;false
+672;Pertes sur exercices antérieurs;67;CHARGE;false;false;false
+691;Impôts sur les excédents liés à l'activité d'épargne et de crédit;69;CHARGE;false;false;false
+692;Impôts sur les excédents liés aux activités autres que l'épargne et le crédit;69;CHARGE;false;false;false
+701;Produits sur opérations avec les institutions financières;70;PRODUIT;false;false;false
+702;Produits sur opérations avec les membres, bénéficiaires ou clients;70;PRODUIT;false;false;false
+703;Produits sur opérations sur titres et sur opérations diverses;70;PRODUIT;false;false;false
+704;Produits sur valeurs immobilisées;70;PRODUIT;false;false;false
+708;Produits sur prestations de services financiers;70;PRODUIT;false;false;false
+709;Autres produits d'exploitation financière;70;PRODUIT;false;false;false
+711;Ventes;71;PRODUIT;false;false;false
+722;Indemnités de fonction et rémunérations d'administrateurs, de gérants reçues;72;PRODUIT;false;false;false
+725;Plus-values de cession;72;PRODUIT;false;false;false
+728;Transferts de charges d'exploitation non financière;72;PRODUIT;false;false;false
+729;Autres produits divers d'exploitation;72;PRODUIT;false;false;false
+761;Reprises d'amortissements des immobilisations;76;PRODUIT;false;false;false
+763;Reprises de provisions pour dépréciation des immobilisations;76;PRODUIT;false;false;false
+764;Reprises de provisions sur créances en souffrance;76;PRODUIT;false;false;false
+766;Reprises de provisions pour dépréciation des autres éléments d'actif;76;PRODUIT;false;false;false
+767;Reprises de provisions pour risques et charges;76;PRODUIT;false;false;false
+768;Reprises de provisions réglementées;76;PRODUIT;false;false;false
+769;Récupération sur créances amorties;76;PRODUIT;false;false;false
+771;Produits exceptionnels;77;PRODUIT;false;false;false
+772;Profits sur exercices antérieurs;77;PRODUIT;false;false;false
+1011;Billets et monnaies émis par la BCEAO;101;ACTIF;false;false;false
+1131;Centre des Chèques postaux;113;ACTIF;false;false;false
+1136;Dettes rattachées;113;PASSIF;false;false;false
+1137;Créances rattachées;113;ACTIF;false;false;false
+1141;Banques et correspondants;114;ACTIF;false;false;true
+1146;Dettes rattachées;114;PASSIF;false;false;false
+1147;Créances rattachées;114;ACTIF;false;false;false
+1161;Systèmes Financiers Décentralisés;116;ACTIF;false;false;false
+1166;Dettes rattachées;116;PASSIF;false;false;false
+1167;Créances rattachées;116;ACTIF;false;false;false
+1171;Autres institutions financières;117;ACTIF;false;false;false
+1176;Dettes rattachées;117;PASSIF;false;false;false
+1177;Créances rattachées;117;ACTIF;false;false;false
+1261;Dépôts à terme constitués;126;ACTIF;false;false;false
+1267;Créances rattachées;126;ACTIF;false;false;false
+1271;Dépôts de garantie constitués;127;ACTIF;false;false;false
+1277;Créances rattachées;127;ACTIF;false;false;false
+1281;Autres dépôts constitués;128;ACTIF;false;false;false
+1287;Créances rattachées;128;ACTIF;false;false;false
+1311;Prêts à moins d'1 an;131;ACTIF;false;false;false
+1317;Créances rattachées;131;ACTIF;false;false;false
+1331;Prêts à terme;133;ACTIF;false;false;false
+1337;Créances rattachées;133;ACTIF;false;false;false
+1541;Banques et correspondants;154;PASSIF;false;false;true
+1546;Dettes rattachées;154;PASSIF;false;false;false
+1547;Créances rattachées;154;ACTIF;false;false;false
+1561;Systèmes Financiers Décentralisés;156;PASSIF;false;false;false
+1566;Dettes rattachées;156;PASSIF;false;false;false
+1567;Créances rattachées;156;ACTIF;false;false;false
+1571;Autres institutions financières;157;PASSIF;false;false;false
+1576;Dettes rattachées;157;PASSIF;false;false;false
+1577;Créances rattachées;157;ACTIF;false;false;false
+1611;Dépôts à terme reçus;161;PASSIF;false;false;false
+1616;Dettes rattachées;161;PASSIF;false;false;false
+1621;Dépôts de garantie reçus;162;PASSIF;false;false;false
+1626;Dettes rattachées;162;PASSIF;false;false;false
+1651;Autres dépôts reçus;165;PASSIF;false;false;false
+1656;Dettes rattachées;165;PASSIF;false;false;false
+1751;Emprunts à moins d'un an;175;PASSIF;false;false;false
+1756;Dettes rattachées;175;PASSIF;false;false;false
+1781;Emprunts à terme;178;PASSIF;false;false;false
+1786;Dettes rattachées;178;PASSIF;false;false;false
+1921;Prêts en souffrance de 0 à 3 mois au plus;192;ACTIF;false;false;false
+1922;Prêts en souffrance de plus de 3 mois à 6 mois au plus;192;ACTIF;false;false;false
+1991;Provisions sur prêts en souffrance de 6 mois au plus;199;PASSIF;false;false;false
+1992;Provisions sur prêts en souffrance de plus de 6 mois à 12 mois au plus;199;PASSIF;false;false;false
+1993;Provisions sur prêts en souffrance de plus de 12 mois à 24 mois au plus;199;PASSIF;false;false;false
+2022;Crédits ordinaires;202;ACTIF;false;false;false
+2023;Découverts;202;ACTIF;false;false;false
+2031;Crédits à moyen terme;203;ACTIF;false;false;false
+2037;Créances rattachées;203;ACTIF;false;false;false
+2511;Comptes ordinaires;251;PASSIF;false;false;false
+2512;Comptes ordinaires sur livret;251;PASSIF;false;false;false
+2521;Dépôts à terme reçus;252;PASSIF;false;false;false
+2526;Dettes rattachées;252;PASSIF;false;false;false
+2531;Compte d'épargne sur livret;253;PASSIF;false;false;false
+2545;Dépôts de garantie reçus;254;PASSIF;false;false;false
+2546;Dettes rattachées;254;PASSIF;false;false;false
+2551;Autres dépôts reçus;255;PASSIF;false;false;false
+2556;Dettes rattachées;255;PASSIF;false;false;false
+2711;Emprunts;271;PASSIF;false;false;false
+2716;Dettes rattachées;271;PASSIF;false;false;false
+2721;Dispositions à payer;272;PASSIF;false;false;false
+2722;Provisions pour chèques certifiés;272;PASSIF;false;false;false
+2725;Divers;272;PASSIF;false;false;false
+2726;Dettes rattachées;272;PASSIF;false;false;false
+2991;Provisions sur crédits en souffrance de 6 mois au plus;299;PASSIF;false;false;false
+2992;Provisions sur crédits en souffrance de plus de 6 mois à 12 mois au plus;299;PASSIF;false;false;false
+2993;Provisions sur crédits en souffrance de plus de 12 mois;299;PASSIF;false;false;false
+3211;Stocks de biens meubles;321;ACTIF;false;false;false
+3219;Provisions pour dépréciation;321;PASSIF;false;false;false
+3221;Stocks de marchandises;322;ACTIF;false;false;false
+3229;Provisions pour dépréciation;322;PASSIF;false;false;false
+3231;Stocks de fournitures;323;ACTIF;false;false;false
+3239;Provisions pour dépréciation;323;PASSIF;false;false;false
+3319;Autres créances en souffrance et provisions pour dépréciation;331;PASSIF;false;false;false
+3791;Comptes d'attente - actif;379;ACTIF;false;false;false
+3792;Comptes d'attente passif;379;PASSIF;false;false;false
+3811;Charges à répartir sur plusieurs exercices;381;ACTIF;false;false;false
+3812;Charges constatées d'avance;381;ACTIF;false;false;false
+3814;Comptes d'abonnement de produits;381;ACTIF;false;false;false
+3815;Produits à recevoir;381;ACTIF;false;false;false
+3822;Produits constatés d'avance;382;PASSIF;false;false;false
+3824;Comptes d'abonnement de charges;382;PASSIF;false;false;false
+3825;Charges à payer;382;PASSIF;false;false;false
+4126;Versements restant à effectuer;412;ACTIF;false;false;false
+4127;Créances rattachées;412;ACTIF;false;false;false
+4129;Provisions pour dépréciation;412;PASSIF;false;false;false
+4311;Immobilisations incorporelles en cours;431;ACTIF;false;false;false
+4319;Provisions pour dépréciation;431;PASSIF;false;false;false
+4321;Immobilisations corporelles en cours;432;ACTIF;false;false;false
+4329;Provisions pour dépréciation;432;PASSIF;false;false;false
+4418;Amortissements;441;PASSIF;false;false;false
+4419;Provisions pour dépréciation;441;PASSIF;false;false;false
+4428;Amortissements des immobilisations corporelles;442;PASSIF;false;false;false
+4429;Provisions pour dépréciation des immobilisations corporelles;442;PASSIF;false;false;false
+5011;Subventions d'investissement;501;PASSIF;false;false;false
+5012;Subventions d'investissement virées au compte de résultat;501;PASSIF;false;false;false
+5521;Réserve générale;552;PASSIF;false;false;false
+5522;Réserves facultatives;552;PASSIF;false;false;false
+5523;Autres réserves;552;PASSIF;false;false;false
+5711;Capital souscrit appelé;571;PASSIF;false;false;false
+5712;Capital non appelé;571;PASSIF;false;false;false
+5731;Actionnaires, associés ou membres, capital souscrit non appelé;573;PASSIF;false;false;false
+5732;Actionnaires, associés ou membres, capital souscrit appelé non versé;573;PASSIF;false;false;false
+6011;Intérêts sur comptes ordinaires chez les institutions financières;601;CHARGE;false;false;false
+6015;Intérêts sur comptes ordinaires des institutions financières;601;CHARGE;false;false;false
+6016;Intérêts sur autres comptes de dépôts des institutions financières;601;CHARGE;false;false;false
+6017;Intérêts sur comptes d'emprunts;601;CHARGE;false;false;false
+6018;Autres intérêts;601;CHARGE;false;false;false
+6019;Commissions;601;CHARGE;false;false;false
+6025;Intérêts sur comptes des membres, bénéficiaires ou clients;602;CHARGE;false;false;false
+6027;Intérêts sur emprunts et autres sommes dues aux membres, bénéficiaires ou clients;602;CHARGE;false;false;false
+6028;Autres intérêts;602;CHARGE;false;false;false
+6029;Commissions;602;CHARGE;false;false;false
+6031;Charges et pertes sur titres de placement;603;CHARGE;false;false;false
+6038;Charges sur opérations diverses;603;CHARGE;false;false;false
+6039;Commissions;603;CHARGE;false;false;false
+6041;Charges sur immobilisations financières;604;CHARGE;false;false;false
+6053;Charges sur emprunts et titres émis subordonnés;605;CHARGE;false;false;false
+6091;Moins-values sur cession d'éléments d'actif;609;CHARGE;false;false;false
+6098;Transferts de produits d'exploitation financière;609;CHARGE;false;false;false
+6099;Diverses charges d'exploitation financière;609;CHARGE;false;false;false
+6112;Stocks vendus;611;CHARGE;false;false;false
+6116;Achats non stockés de matières et fournitures;611;CHARGE;false;false;false
+6117;Achats de marchandises;611;CHARGE;false;false;false
+6118;Frais accessoires d'achat;611;CHARGE;false;false;false
+6119;Rabais, remises et ristournes obtenus sur achats de marchandises;611;CHARGE;false;false;false
+6211;Redevances de crédit-bail;621;CHARGE;false;false;false
+6212;Loyers;621;CHARGE;false;false;false
+6213;Charges locatives et de co-propriété;621;CHARGE;false;false;false
+6214;Entretien et réparations;621;CHARGE;false;false;false
+6215;Primes d'assurance;621;CHARGE;false;false;false
+6216;Etudes et recherches;621;CHARGE;false;false;false
+6217;Frais de formation;621;CHARGE;false;false;false
+6218;Divers;621;CHARGE;false;false;false
+6219;Rabais, remises et ristournes obtenus sur services extérieurs;621;CHARGE;false;false;false
+6221;Personnel extérieur à l'institution;622;CHARGE;false;false;false
+6222;Rémunérations d'intermédiaires et honoraires;622;CHARGE;false;false;false
+6223;Publicité, publications et relations publiques;622;CHARGE;false;false;false
+6224;Transports de biens;622;CHARGE;false;false;false
+6225;Transports collectifs du personnel;622;CHARGE;false;false;false
+6226;Déplacements, missions et réceptions;622;CHARGE;false;false;false
+6227;Frais postaux et frais de communication;622;CHARGE;false;false;false
+6228;Divers;622;CHARGE;false;false;false
+6229;Rabais, remises et ristournes obtenus sur autres services extérieurs;622;CHARGE;false;false;false
+6231;Redevances pour concessions, brevets, licences, procédés, droits et valeurs similaires;623;CHARGE;false;false;false
+6232;Indemnités de fonction versées;623;CHARGE;false;false;false
+6233;Frais de tenue des réunions des organes et des assemblées;623;CHARGE;false;false;false
+6235;Moins-values de cession sur immobilisations;623;CHARGE;false;false;false
+6238;Transferts de produits d'exploitation non financière;623;CHARGE;false;false;false
+6239;Autres charges diverses d'exploitation non financière;623;CHARGE;false;false;false
+6641;Dotations aux provisions sur créances en souffrance de 6 mois au plus;664;CHARGE;false;false;false
+6642;Dotations aux provisions sur créances en souffrance de plus de 6 mois à 12 mois au plus;664;CHARGE;false;false;false
+6643;Dotations aux provisions sur créances en souffrance de plus de 12 mois à 24 mois au plus;664;CHARGE;false;false;false
+7011;Intérêts sur comptes ordinaires chez les institutions financières;701;PRODUIT;false;false;false
+7012;Intérêts sur autres comptes de dépôts chez les institutions financières;701;PRODUIT;false;false;false
+7013;Intérêts sur comptes de prêts aux institutions financières;701;PRODUIT;false;false;false
+7015;Intérêts sur comptes ordinaires des institutions financières;701;PRODUIT;false;false;false
+7018;Autres intérêts;701;PRODUIT;false;false;false
+7019;Commissions (Cotisations et droits d'adhésion, commissions);701;PRODUIT;false;false;false
+7021;Intérêts sur crédits aux membres, bénéficiaires ou clients;702;PRODUIT;false;false;false
+7025;Intérêts sur comptes des membres, bénéficiaires ou clients;702;PRODUIT;false;false;false
+7028;Autres intérêts;702;PRODUIT;false;false;false
+7029;Commissions (Cotisations et droits d'adhésion, commissions);702;PRODUIT;false;false;false
+7038;Produits sur opérations diverses;703;PRODUIT;false;false;false
+7039;Commissions;703;PRODUIT;false;false;false
+7091;Plus values sur cession d'éléments d'actif;709;PRODUIT;false;false;false
+7098;Transferts de charges d'exploitation;709;PRODUIT;false;false;false
+7099;Divers produits d'exploitation;709;PRODUIT;false;false;false
+7111;Ventes de marchandises;711;PRODUIT;false;false;false
+7118;Produits accessoires d'achat;711;PRODUIT;false;false;false
+7119;Rabais, remises et ristournes accordés sur ventes de marchandises;711;PRODUIT;false;false;false
+7251;sur immobilisations incorporelles et corporelles;725;PRODUIT;false;false;false
+7252;sur immobilisations financières;725;PRODUIT;false;false;false
+7281;Charges refacturées;728;PRODUIT;false;false;false
+7282;Charges à répartir sur plusieurs exercices;728;PRODUIT;false;false;false
+7289;Autres transferts de charges;728;PRODUIT;false;false;false
+10110;Coffre fort Institution;1011;ACTIF;false;false;true
+20227;Créances rattachées;202;ACTIF;false;false;false
+25116;Dettes rattachées;2511;PASSIF;false;false;false
+25117;Créances rattachées;2511;ACTIF;false;false;false
+25126;Dettes rattachées;2512;PASSIF;false;false;false
+25316;Dettes rattachées;2531;PASSIF;false;false;false
+57111;Capital souscrit appelé versé;5711;PASSIF;false;false;false
+57112;Capital souscrit appelé non versé;5711;PASSIF;false;false;false
+60251;Intérêts sur comptes ordinaires créditeurs;6025;CHARGE;false;false;false
+60252;Intérêts sur dépôts à terme reçus;6025;CHARGE;false;false;false
+60253;Intérêts sur comptes d'épargne à régime spécial;6025;CHARGE;false;false;false
+60254;Intérêts sur dépôts de garantie reçus;6025;CHARGE;false;false;false
+60255;Intérêts sur autres dépôts reçus;6025;CHARGE;false;false;false
+66411;Dotations aux provisions sur créances en souffrance de 0 à 3 mois au plus;6641;CHARGE;false;false;false
+66412;Dotations aux provisions sur créances en souffrance de plus de 3 mois à 6 mois au plus;6641;CHARGE;false;false;false
+602511;Intérêts sur comptes ordinaires créditeurs;60251;CHARGE;false;false;false
+602512;Intérêts sur comptes ordinaires sur livrets créditeurs;60251;CHARGE;false;false;false

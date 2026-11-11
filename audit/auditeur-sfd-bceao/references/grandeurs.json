@@ -1,0 +1,530 @@
+[
+  {
+    "code": "NB_CREDITS_DECAISSES",
+    "libelle": "Nombre de crédits décaissés dans la période",
+    "unite": "NOMBRE",
+    "nature": "PERIODE",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_EPARGNANTS",
+    "libelle": "Nombre d'épargnants : personnes ayant au moins un dépôt, épargne obligatoire comprise, comptées une fois",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_EMPRUNTEURS",
+    "libelle": "Nombre d'emprunteurs (crédits sains et en souffrance), comptés une fois",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_EMPRUNTEURS_ACTIFS",
+    "libelle": "Nombre d'emprunteurs actifs",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_AGENTS_CREDIT",
+    "libelle": "Nombre d'agents de crédit",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_EMPLOYES",
+    "libelle": "Nombre d'employés",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "NB_CLIENTS_ACTIFS",
+    "libelle": "Nombre de clients actifs (au moins un dépôt ou un crédit)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "ENCOURS_RISQUE_30J",
+    "libelle": "Encours des crédits dont une échéance au moins est impayée depuis plus de 30 jours",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "ENCOURS_RISQUE_90J",
+    "libelle": "Encours des crédits dont une échéance au moins est impayée depuis plus de 90 jours",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "ENCOURS_RISQUE_180J",
+    "libelle": "Encours des crédits dont une échéance au moins est impayée depuis plus de 180 jours",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R3_PRETS_DIRIGEANTS_PERSONNEL",
+    "libelle": "Ratio III : prêts et engagements par signature bruts aux dirigeants, au personnel et aux personnes liées",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R4_PLUS_GROS_EMPRUNTEUR",
+    "libelle": "Ratio IV : prêts et engagements par signature bruts au plus gros emprunteur",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R6_ACTIVITES_AUTRES",
+    "libelle": "Ratio VI : montant consacré aux opérations autres que l'épargne et le crédit",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R7_DOTATION_RESERVE_GENERALE",
+    "libelle": "Ratio VII : dotation à la réserve générale",
+    "unite": "MONTANT",
+    "nature": "PERIODE",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "FP_COMPLEMENT_PROVISIONS",
+    "libelle": "Fonds propres : complément de provisions exigé par les autorités et non constitué",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "FP_PARTICIPATIONS_SFD_EC",
+    "libelle": "Participations dans d'autres SFD ou établissements de crédit",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "I016_FRAIS_VALEURS_IMMOBILISES",
+    "libelle": "Instruction 016 : frais et valeurs immobilisés compris dans les immobilisations incorporelles d'exploitation (D31)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_F2A_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste F2A (autres comptes de dépôts créditeurs)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_F50_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste F50 (autres sommes dues aux institutions financières)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G15_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G15 (dépôts à terme reçus)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G2A_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G2A (comptes d'épargne à régime spécial)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G30_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G30 (autres dépôts de garantie reçus)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G35_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G35 (autres dépôts reçus)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G60_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G60 (emprunts)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_G70_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste G70 (autres sommes dues)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_A2H_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste A2H (dépôts à terme constitués)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_A2I_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste A2I (dépôts de garantie constitués)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R2_A2J_PLUS_UN_AN",
+    "libelle": "Ratio II : part à plus d'un an de durée résiduelle du poste A2J (autres dépôts constitués)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R5_A2J_COURT_TERME",
+    "libelle": "Ratio V : part à trois mois au plus de durée résiduelle du poste A2J (autres dépôts constitués)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R5_G15_COURT_TERME",
+    "libelle": "Ratio V : part à trois mois au plus de durée résiduelle du poste G15 (dépôts à terme reçus)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R5_H10_COURT_TERME",
+    "libelle": "Ratio V : part à trois mois au plus de durée résiduelle du poste H10 (versements restant à effectuer)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "R5_H40_COURT_TERME",
+    "libelle": "Ratio V : part à trois mois au plus de durée résiduelle du poste H40 (créditeurs divers)",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T1_PP_HOMMES",
+    "libelle": "Personnes physiques non membres d'un groupement : hommes (a)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T1_PP_FEMMES",
+    "libelle": "Personnes physiques non membres d'un groupement : femmes (b)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T1_GROUPEMENTS",
+    "libelle": "(2) Groupements, comptés pour un",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T1_MEMBRES_GROUPEMENTS_HOMMES",
+    "libelle": "Membres des groupements : hommes (c)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T1_MEMBRES_GROUPEMENTS_FEMMES",
+    "libelle": "Membres des groupements : femmes (d)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_MEMBRES_CA",
+    "libelle": "Membres du conseil d'administration ou de l'organe équivalent",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_MEMBRES_CONSEIL_SURVEILLANCE",
+    "libelle": "Membres du conseil de surveillance",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_MEMBRES_COMITE_CREDIT",
+    "libelle": "Membres du comité de crédit",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_DIRIGEANTS",
+    "libelle": "(1) Dirigeants",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_AUTRES_EMPLOYES",
+    "libelle": "(2) Autres employés",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_NATIONAUX_CDI",
+    "libelle": "Personnel national en contrat à durée indéterminée",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_NATIONAUX_CDD",
+    "libelle": "Personnel national en contrat à durée déterminée",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_EXPATRIES_CDI",
+    "libelle": "Personnel expatrié en contrat à durée indéterminée",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T2_EXPATRIES_CDD",
+    "libelle": "Personnel expatrié en contrat à durée déterminée",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T3_PP_HOMMES",
+    "libelle": "Personnes physiques : hommes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T3_PP_FEMMES",
+    "libelle": "Personnes physiques : femmes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T3_PERSONNES_MORALES",
+    "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T4_PP_HOMMES",
+    "libelle": "Personnes physiques : hommes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T4_PP_FEMMES",
+    "libelle": "Personnes physiques : femmes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T4_PERSONNES_MORALES",
+    "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T5_IMMOBILIERS",
+    "libelle": "Crédits immobiliers",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T5_EQUIPEMENT",
+    "libelle": "Crédits d'équipement",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T5_CONSOMMATION",
+    "libelle": "Crédits à la consommation",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T5_TRESORERIE",
+    "libelle": "Crédits de trésorerie",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T5_AUTRES",
+    "libelle": "Autres crédits",
+    "unite": "MONTANT",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T6_PP_HOMMES",
+    "libelle": "Personnes physiques : hommes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T6_PP_FEMMES",
+    "libelle": "Personnes physiques : femmes",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T6_PERSONNES_MORALES",
+    "libelle": "(2) Personnes morales (groupements, entreprises, associations)",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_INSTITUTIONS_AFFILIEES",
+    "libelle": "Institutions affiliées",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_AFFILIEES_CONTROLEES",
+    "libelle": "Institutions affiliées contrôlées",
+    "unite": "NOMBRE",
+    "nature": "PERIODE",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_TAUX_RECOMMANDATIONS",
+    "libelle": "Taux de mise en œuvre des recommandations des contrôles",
+    "unite": "POURCENTAGE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_REUNIONS_CONSEIL_SURVEILLANCE",
+    "libelle": "Réunions du conseil de surveillance",
+    "unite": "NOMBRE",
+    "nature": "PERIODE",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_AGENCES_POINTS_SERVICE",
+    "libelle": "Agences ou points de service",
+    "unite": "NOMBRE",
+    "nature": "INSTANT",
+    "source": "SAISIE",
+    "module": null
+  },
+  {
+    "code": "T7_RAPPORTS_CONTROLE_INTERNE",
+    "libelle": "Rapports de contrôle interne",
+    "unite": "NOMBRE",
+    "nature": "PERIODE",
+    "source": "SAISIE",
+    "module": null
+  }
+]
